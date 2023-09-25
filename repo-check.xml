@@ -1,10 +1,28 @@
 <?xml version="1.0"?>
 
 <toInternalize>
-    <id>4k-slideshow-maker</id>
-    <id>4k-stogram</id>
-    <id>4k-video-downloader</id>
-    <id>4k-video-to-mp3</id>
-    <id>4k-youtube-to-mp3</id>
+    <id>7zip</id>
+    <id>firefox</id>
+    <id>adobereader</id>
     <id>googlechrome</id>
+    <id>zoom</id>
+    <id>chocolatey</id>
+    <id>chocolatey-compatibility.extension</id>
+    <id>chocolatey-core.extension</id>
+    <id>chocolatey-misc-helpers.extension</id>
+    <id>chocolatey-windowsupdate.extension</id>
+    <id>firefox</id>
+    <id>nexus-repository</id>
+    <id>python</id>
+    <id>python3</id>
+    <id>rsat</id>
+    <id>vcredist2005</id>
+    <id>vcredist2008</id>
+    <id>vcredist2010</id>
+    <id>vcredist2012</id>
+    <id>vcredist2013</id>
+    <id>vcredist2015</id>
+    <id>vcredist2017</id>
+    <id>vcredist140</id>
+    <id>vmware-tools</id>
 </toInternalize>
