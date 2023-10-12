@@ -6,14 +6,8 @@
     <id>adobereader</id>
     <id>googlechrome</id>
     <id>zoom</id>
-    <id>chocolatey</id>
-    <id>chocolatey-compatibility.extension</id>
-    <id>chocolatey-core.extension</id>
-    <id>chocolatey-misc-helpers.extension</id>
-    <id>chocolatey-windowsupdate.extension</id>
     <id>firefox</id>
     <id>nexus-repository</id>
-    <id>python</id>
     <id>python3</id>
     <id>rsat</id>
     <id>vcredist2005</id>
