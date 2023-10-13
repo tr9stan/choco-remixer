@@ -59,43 +59,55 @@
         $nuspecID = $_
         Write-Verbose "Comparing repo versions of $($nuspecID)"
 
-        $privateVersions = $privateInfo | Where-Object { $_.name -eq $nuspecID } | Select-Object -ExpandProperty version
+        # Normalize version, as Chocolatey CLI now normalizes versions on pack
+        $privateVersions = $privateInfo | Where-Object { $_.name -eq $nuspecID } | Select-Object -ExpandProperty version | ForEach-Object { [NuGet.Versioning.NuGetVersion]::Parse($_).ToNormalizedString(); }
 
         $publicPageURL = $config.publicRepoURL + 'Packages()?$filter=(tolower(Id)%20eq%20%27' + $nuspecID + '%27)%20and%20IsLatestVersion'
         [xml]$publicPage = Invoke-WebRequest -UseBasicParsing -TimeoutSec 25 -Uri $publicPageURL
-        $publicVersion = $publicPage.feed.entry.properties.Version
+        $publicEntry = $publicPage.feed.entry | Select-Object -first 1
+        $publicVersion = $publicEntry.properties.Version
 
         if ($null -eq $publicVersion) {
             $publicPageURL = $config.publicRepoURL + 'Packages()?$filter=(tolower(Id)%20eq%20%27' + $nuspecID + '%27)%20and%20IsAbsoluteLatestVersion'
             [xml]$publicPage = Invoke-WebRequest -UseBasicParsing -TimeoutSec 5 -Uri $publicPageURL
-            $publicVersion = $publicPage.feed.entry.properties.Version
+            $publicEntry = $publicPage.feed.entry | Select-Object -first 1
+            $publicVersion = $publicEntry.properties.Version
 
             if ($null -eq $publicVersion) {
                 Write-Error "$nuspecID does not exist or is unlisted on $config.publicRepoURL"
             }
         }
 
+        # Normalize version, as Chocolatey CLI now normalizes versions on pack
+        $publicVersion = [NuGet.Versioning.NuGetVersion]::Parse($publicVersion).ToNormalizedString();
+
         if ($privateVersions -inotcontains $publicVersion) {
 
             Write-Information "$nuspecID out of date on private repo, found version $publicVersion, downloading" -InformationAction Continue
 
+            $srcUrl = $publicEntry.content.src | Select-Object -First 1
             #pwsh considers 3xx response codes as an error if redirection is disallowed
             if ($PSVersionTable.PSVersion.major -ge 6) {
                 try {
-                    Invoke-WebRequest -UseBasicParsing -Uri $publicPage.feed.entry.content.src -MaximumRedirection 0 -ea Stop
+                    $null = Invoke-WebRequest -UseBasicParsing -Uri $srcUrl -MaximumRedirection 0 -ea Stop
+                    $dlwdUrl = $srcUrl
                 } catch {
                     $dlwdURL = $_.Exception.Response.headers.location.absoluteuri
                 }
             } else {
-                $redirectpage = Invoke-WebRequest -UseBasicParsing -Uri $publicPage.feed.entry.content.src -MaximumRedirection 0 -ea 0
-                $dlwdURL = $redirectpage.Links.href
+                $redirectPage = Invoke-WebRequest -UseBasicParsing -Uri $srcUrl -MaximumRedirection 0 -ea 0
+                if ([string]::IsNullOrWhiteSpace($redirectPage.Links.href)) {
+                    $dlwdUrl = $srcUrl
+                } else {
+                    $dlwdURL = $redirectpage.Links.href
+                }
             }
 
             #Ugly, but I'm not sure of a better way to get the hex representation from the base64 representation of the checksum
-            $checksum = -join ([System.Convert]::FromBase64String($publicPage.feed.entry.properties.PackageHash) | ForEach-Object { "{0:X2}" -f $_ })
-            $checksumType = $publicPage.feed.entry.properties.PackageHashAlgorithm
+            $checksum = -join ([System.Convert]::FromBase64String($publicEntry.properties.PackageHash) | ForEach-Object { "{0:X2}" -f $_ })
+            $checksumType = $publicEntry.properties.PackageHashAlgorithm
 
-            $filename = $dlwdURL.split("/") | Select-Object -Last 1
+            $filename = $nuspecID + "." + $publicVersion + ".nupkg"
 
             $saveDir = Join-Path $config.searchDir $nuspecID
             if (!(Test-Path $saveDir)) {
