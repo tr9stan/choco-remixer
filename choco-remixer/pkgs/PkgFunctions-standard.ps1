@@ -1693,20 +1693,3 @@ Function Convert-powertoys ([PackageInternalizeInfo]$obj) {
 
     $obj.installScriptMod = Edit-InstallChocolateyPackage @editInstallChocolateyPackageArgs
 }
-
-Function Convert-vmware-tools ($obj) {
-    $editInstallChocolateyPackageArgs = @{
-        architecture     = "both"
-        nuspecID         = $obj.nuspecID
-        installScript    = $obj.installScriptOrig
-        toolsDir         = $obj.toolsDir
-        urltype          = 2
-        argstype         = 0
-        stripQueryString = $true
-        RemoveExe        = $true
-        checksumArgsType = 2
-        checksumTypeType = 'sha256'
-    }
-
-    $obj.installScriptMod = Edit-InstallChocolateyPackage @editInstallChocolateyPackageArgs
-}

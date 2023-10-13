@@ -4824,13 +4824,6 @@
       <needsToolsDir>yes</needsToolsDir>
       <whyNotInternal>licensing</whyNotInternal>
     </pkg>
-    <pkg>
-      <id>vmware-tools</id>
-      <needsStopAction>no</needsStopAction>
-      <needsToolsDir>yes</needsToolsDir>
-      <functionName>Convert-vmware-tools</functionName>
-      <whyNotInternal>licensing</whyNotInternal>
-    </pkg>
     <!--    <pkg>
       <functionName></functionName>
       <id></id>
