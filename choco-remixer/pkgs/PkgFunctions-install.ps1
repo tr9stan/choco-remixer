@@ -1337,27 +1337,21 @@ Function Convert-vcredist2013 ([PackageInternalizeInfo]$obj) {
 
 
 Function Convert-vscode-install ([PackageInternalizeInfo]$obj) {
-    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url ").tostring()
     $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url64bit ").tostring()
 
-    $url32 = ($fullurl32 -split "'" | Select-String -Pattern "http").tostring()
     $url64 = ($fullurl64 -split "'" | Select-String -Pattern "http").tostring()
 
-    $filename32 = "VSCode-Installer-" + $obj.version + "-x32.exe"
     $filename64 = "VSCode-Installer-" + $obj.version + "-x64.exe"
 
-    $filePath32 = 'file           = (Join-Path $toolsDir "' + $filename32 + '")'
     $filePath64 = 'file64         = (Join-Path $toolsDir "' + $filename64 + '")'
 
     $obj.installScriptMod = $obj.installScriptMod -replace "Install-ChocolateyPackage" , "Install-ChocolateyInstallPackage"
-    $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n  $filePath32`n  $filePath64"
+    $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n  $filePath64"
     $obj.installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $obj.InstallScriptMod
     $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.exe'
 
-    $checksum32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '  Checksum  ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
     $checksum64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '  Checksum64  ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
 
-    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum32
     Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url64 -filename $filename64 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum64
 }
 
@@ -1616,6 +1610,25 @@ Function Convert-dotnet1.1 ([PackageInternalizeInfo]$obj) {
     Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksum $checksum32 -checksumTypeType 'sha256'
 }
 
+Function Convert-startallback ([PackageInternalizeInfo]$obj) {
+    $scriptVersionFull = ($obj.installScriptOrig -split "`n" | Select-String -Pattern ' version ').tostring()
+    $scriptVersion = ($scriptVersionFull -split '"' | Select-String -Pattern "\d").ToString()
+    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern ' url ').tostring()
+    $url = ($fullurl32 -split '"' | Select-String -Pattern "http").ToString()
+    $url = $url -replace '\$\{version\}',$scriptVersion
+
+    $filename = ($url -split "/" | Select-Object -Last 1).tostring()
+    $filePath32 = 'file          = (Join-Path $toolsDir "' + $filename + '")'
+
+    $obj.installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $obj.InstallScriptMod
+    $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.exe'
+    $obj.installScriptMod = $obj.installScriptMod -replace 'Install-ChocolateyPackage' , 'Install-ChocolateyInstallPackage'
+    $obj.installScriptMod = $obj.installScriptMod -replace 'packageArgs = @{' , "$&`n  $filePath32"
+
+    $checksum = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\schecksum\s').tostring() -split '"' | Select-Object -Last 1 -Skip 1
+    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url -filename $filename -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum
+}
+
 Function Convert-cpuz ([PackageInternalizeInfo]$obj) {
     $editInstallChocolateyPackageargs = @{
         architecture     = "x32"
@@ -1661,7 +1674,7 @@ Function Convert-googlechrome ([PackageInternalizeInfo]$obj) {
 
 Function Convert-vscodium-install ([PackageInternalizeInfo]$obj) {
     $editInstallChocolateyPackageargs = @{
-        architecture     = "both"
+        architecture     = "x64"
         nuspecID         = $obj.nuspecID
         version          = $obj.version
         installScript    = $obj.installScriptOrig
