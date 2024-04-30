@@ -20,8 +20,10 @@ Function Invoke-InternalizeDownloadedChocoPkg {
     $ErrorActionPreference = 'Stop'
 
     # Import package specific functions
-    Get-ChildItem -Path (Join-Path (Split-Path -Parent $PSScriptRoot) 'pkgs') -Filter "*.ps1" | ForEach-Object {
-        . $_.fullname
+    if (!(Test-Path -Path Function:\Test-PkgFunctionsDefined)) {
+        Get-ChildItem -Path (Join-Path (Split-Path -Parent $PSScriptRoot) 'pkgs') -Filter "*.ps1" | ForEach-Object {
+            . $_.fullname
+        }
     }
 
     if ($null -eq $config) {
@@ -31,7 +33,7 @@ Function Invoke-InternalizeDownloadedChocoPkg {
             Write-Error "Error details:`n$($PSItem.ToString())`n$($PSItem.InvocationInfo.Line)`n$($PSItem.ScriptStackTrace)"
         }
     } else {
-        Write-Verbose "Config already aquired"
+        Write-Debug "Config already acquired"
     }
 
     $nuspecDetails = Read-NuspecVersion -NupkgPath $nupkgFile
@@ -39,11 +41,11 @@ Function Invoke-InternalizeDownloadedChocoPkg {
     $nuspecID = $nuspecDetails[1]
 
     #todo, make this faster, hash table? linq? other?
-    [array]$internalizedVersions = ($internalizedXMLcontent.internalized.pkg | Where-Object { $_.id -ieq "$nuspecID" }).version
+    [array]$internalizedVersions = $internalizedXMLcontent.SelectSingleNode("//pkg[@id=""$($nuspecID.ToLower())""]").version
 
     if ($internalizedVersions -icontains $nuspecVersion) {
         Write-Verbose "$nuspecID $nuspecVersion is already internalized"
-    } elseif ($packagesXMLcontent.packages.notImplemented.id -icontains $nuspecID) {
+    } elseif ($notImplementedIdsTableLower.ContainsKey($nuspecID.ToLower())) {
         Write-Warning "$nuspecID $nuspecVersion not implemented. Support has to be added for it, see ADDING_PACKAGES.md"
     } elseif ($config.personal.id -icontains $nuspecID) {
         Write-Verbose "$nuspecID is a custom package"
@@ -114,8 +116,6 @@ Function Invoke-InternalizeDownloadedChocoPkg {
         Write-Warning "$nuspecID $nuspecVersion is a unknown package ID, ignoring. Support has to be added for it, see ADDING_PACKAGES.md"
     }
 
-    [system.gc]::Collect()
-
     if ($null -eq $obj) {
         return
     }
@@ -152,7 +152,9 @@ Function Invoke-InternalizeDownloadedChocoPkg {
 
     if (!($failed)) {
         Write-UnzippedInstallScript -installScriptMod $obj.installScriptMod -toolsDir $obj.toolsDir
-        Add-NuspecFilesElement -nuspecPath ((Get-ChildItem $obj.VersionDir -Filter "*.nuspec").fullname)
+        $nuspecPath = (Get-ChildItem $obj.VersionDir -Filter "*.nuspec").fullname
+        Add-NuspecFilesElement -nuspecPath $nuspecPath
+        Format-NuspecForValidation -nuspecPath $nuspecPath
 
         if ($noPack) {
             $exitcode = 0
@@ -215,5 +217,5 @@ Function Invoke-InternalizeDownloadedChocoPkg {
 
     Write-Information "$($obj.nuspecID) $($obj.Version) $($obj.status)" -InformationAction Continue
 
-    return "$($obj.nuspecID) $($obj.OldVersion) to $($obj.Version)"
+    return [PackageInternalizeResult]::New($obj)
 }

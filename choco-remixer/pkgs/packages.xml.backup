@@ -83,7 +83,6 @@
     <id>annatar</id>
     <id>ansiblevaultcmd</id>
     <id>ansifilter</id>
-    <id>ant-commander-personal</id>
     <id>ant-commander-pro</id>
     <id>ant-renamer</id>
     <id>ant</id>
@@ -233,7 +232,6 @@
     <id>bind-toolsonly</id>
     <id>bing</id>
     <id>bingdesktop</id>
-    <id>bird</id>
     <id>bitbucket-cli</id>
     <id>bitcoin-unlimited</id>
     <id>bitcoin</id>
@@ -447,7 +445,6 @@
     <id>chrometana-chrome</id>
     <id>chromium</id>
     <id>chrono-chrome</id>
-    <id>chrysalis</id>
     <id>chucknorris</id>
     <id>cinst-shim</id>
     <id>clamav</id>
@@ -1614,7 +1611,6 @@
     <id>lynxtoolkit</id>
     <id>lyx</id>
     <id>lzip</id>
-    <id>m2-repo-cleaner</id>
     <id>mac-precision-touchpad</id>
     <id>macaroni</id>
     <id>magic-wormhole</id>
@@ -2378,7 +2374,6 @@
     <id>rember</id>
     <id>remix-desktop</id>
     <id>remoteapp</id>
-    <id>remotelydesktopclient</id>
     <id>remy</id>
     <id>rename-cli</id>
     <id>renamer</id>
@@ -2432,9 +2427,7 @@
     <id>rojo</id>
     <id>romp</id>
     <id>ronscsveditor</id>
-    <id>ronsdataedit</id>
     <id>ronsdatagear</id>
-    <id>ronsdatastream</id>
     <id>ronshtmlcleaner</id>
     <id>ronsrenamer</id>
     <id>ronsweblynx</id>
@@ -2510,7 +2503,6 @@
     <id>sdcard-formatter</id>
     <id>sdir</id>
     <id>seafile-client</id>
-    <id>sealed-secrets</id>
     <id>search-by-image-chrome</id>
     <id>search-sql-server-database</id>
     <id>searchwithmybrowser</id>
@@ -2598,7 +2590,6 @@
     <id>simplewavsplitter-avalonia</id>
     <id>simplewavsplitter-wpf</id>
     <id>simulide</id>
-    <id>sioyek</id>
     <id>siril</id>
     <id>siv</id>
     <id>siw.portable</id>
@@ -2689,7 +2680,6 @@
     <id>srwareiron</id>
     <id>ssh-chat</id>
     <id>ssh-copy-id</id>
-    <id>ssh-manager</id>
     <id>sshfs</id>
     <id>sshrunas</id>
     <id>sshs</id>
@@ -3038,7 +3028,6 @@
     <id>veusz</id>
     <id>veyon</id>
     <id>vhdattach</id>
-    <id>vial-kb</id>
     <id>victormononf</id>
     <id>vidcoder</id>
     <id>video-ad-block-for-twitch-chrome</id>
@@ -4924,20 +4913,6 @@
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
     <pkg>
-      <id>atlassian-companion</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
-      <needsStopAction>no</needsStopAction>
-      <needsToolsDir>no</needsToolsDir>
-      <architecture>x32</architecture>
-      <urlType>7</urlType>
-      <argsType>0</argsType>
-      <DeEncodeSpace>yes</DeEncodeSpace>
-      <removeMSI>yes</removeMSI>
-      <checksumArgsType>5</checksumArgsType>
-      <checksumTypeType>sha256</checksumTypeType>
-      <whyNotInternal>ToDetermine</whyNotInternal>
-    </pkg>
-    <pkg>
       <id>atom.install</id>
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
@@ -5405,19 +5380,6 @@
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>no</needsToolsDir>
       <architecture>x32</architecture>
-      <urlType>6</urlType>
-      <argsType>0</argsType>
-      <removeEXE>yes</removeEXE>
-      <checksumArgsType>5</checksumArgsType>
-      <checksumTypeType>sha256</checksumTypeType>
-      <whyNotInternal>ToDetermine</whyNotInternal>
-    </pkg>
-    <pkg>
-      <id>bareos-client</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
-      <needsStopAction>yes</needsStopAction>
-      <needsToolsDir>yes</needsToolsDir>
-      <architecture>x64</architecture>
       <urlType>6</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
@@ -7833,19 +7795,6 @@
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
       <doubleQuotesUrl>yes</doubleQuotesUrl>
-      <checksumArgsType>5</checksumArgsType>
-      <checksumTypeType>sha256</checksumTypeType>
-      <whyNotInternal>ToDetermine</whyNotInternal>
-    </pkg>
-    <pkg>
-      <id>directfolders</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
-      <needsStopAction>no</needsStopAction>
-      <needsToolsDir>yes</needsToolsDir>
-      <architecture>x32</architecture>
-      <urlType>7</urlType>
-      <argsType>0</argsType>
-      <removeEXE>yes</removeEXE>
       <checksumArgsType>5</checksumArgsType>
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
@@ -25939,6 +25888,46 @@
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
+    <pkg>
+      <id>atlassian-companion</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>no</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>7</urlType>
+      <argsType>0</argsType>
+      <DeEncodeSpace>yes</DeEncodeSpace>
+      <removeMSI>yes</removeMSI>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>bareos-client</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>yes</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x64</architecture>
+      <urlType>6</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>directfolders</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>7</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
   </implemented>
   <notImplemented>
     <id>010editor.portable</id>
@@ -26071,7 +26060,6 @@
     <id>amule.portable</id>
     <id>amulet</id>
     <id>analyzer2go</id>
-    <id>anchor</id>
     <id>android-ndk</id>
     <id>android-sdk</id>
     <id>ankhsvn</id>
@@ -26123,7 +26111,6 @@
     <id>argo-workflows</id>
     <id>argouml</id>
     <id>aria2</id>
-    <id>ark-vcs</id>
     <id>arkana</id>
     <id>armagetronad</id>
     <id>armory</id>
@@ -26182,7 +26169,6 @@
     <id>autover</id>
     <id>auxil-excel-add-in</id>
     <id>avastbrowsercleanup</id>
-    <id>avctl</id>
     <id>avd-nativeapp</id>
     <id>avgantivirusbusiness</id>
     <id>avgantivirusfree</id>
@@ -26205,7 +26191,6 @@
     <id>azshell</id>
     <id>aztfexport</id>
     <id>aztfy</id>
-    <id>azure-arc</id>
     <id>azure-cosmosdb-emulator</id>
     <id>azure-documentdb-emulator</id>
     <id>azure-functions-core-tools-2</id>
@@ -26232,7 +26217,6 @@
     <id>banana-buchhaltung</id>
     <id>bandizip</id>
     <id>banks.portable</id>
-    <id>banksiagui</id>
     <id>barryschiffer-netscaler-script</id>
     <id>base64</id>
     <id>basilisk.portable</id>
@@ -26452,7 +26436,6 @@
     <id>cfsec</id>
     <id>cgithubinst</id>
     <id>chainlp</id>
-    <id>chainner</id>
     <id>chainsaw</id>
     <id>chandler</id>
     <id>change-dns-servers</id>
@@ -26488,14 +26471,12 @@
     <id>chromehistoryview</id>
     <id>chromepass</id>
     <id>chromium-stable</id>
-    <id>chrysalis.install</id>
     <id>chrysalis.portable</id>
     <id>chutzpah</id>
     <id>ci-cd-assets-vscode</id>
     <id>cica</id>
     <id>cimer</id>
     <id>circleci-cli</id>
-    <id>citrix-enterprise-browser</id>
     <id>citrix-sharefile-outlook</id>
     <id>citrix-sharefile-sync</id>
     <id>citrix-xenserver-sdk</id>
@@ -26685,7 +26666,6 @@
     <id>cursor-commander</id>
     <id>customexplorertoolbar</id>
     <id>cutter</id>
-    <id>cxcli</id>
     <id>cyberduck.install</id>
     <id>cyberduck</id>
     <id>cyberfox</id>
@@ -26863,7 +26843,6 @@
     <id>dllexp</id>
     <id>dmg2img</id>
     <id>dnsdataview</id>
-    <id>dnslookupview</id>
     <id>dnspy-netfx</id>
     <id>dnspy</id>
     <id>dnsquerysniffer</id>
@@ -27039,7 +27018,6 @@
     <id>elevenclock</id>
     <id>elinks</id>
     <id>elixir</id>
-    <id>elk-native</id>
     <id>elkjop-cloud</id>
     <id>elm-new</id>
     <id>elympics-cli</id>
@@ -27059,7 +27037,6 @@
     <id>encryptr</id>
     <id>endless-sky</id>
     <id>energia</id>
-    <id>ente-auth</id>
     <id>entityframeworkpowertools-vs2013</id>
     <id>envycoder</id>
     <id>epanet</id>
@@ -27141,7 +27118,6 @@
     <id>fastglacier</id>
     <id>fastresolver.install</id>
     <id>fastresolver.portable</id>
-    <id>faust</id>
     <id>faviconizer</id>
     <id>faview</id>
     <id>fawkes</id>
@@ -27162,7 +27138,6 @@
     <id>figma</id>
     <id>file-hash-generator</id>
     <id>file-splitter</id>
-    <id>fileactivitywatch</id>
     <id>filealyzer</id>
     <id>fileassassin</id>
     <id>filebot</id>
@@ -27239,7 +27214,6 @@
     <id>flyway.commandline</id>
     <id>fmedesktop</id>
     <id>fmedia</id>
-    <id>focusrite-control</id>
     <id>focuswriter</id>
     <id>fogg</id>
     <id>folder-marker</id>
@@ -27381,7 +27355,6 @@
     <id>gimp-data-extras</id>
     <id>gingerwriter</id>
     <id>git-annex</id>
-    <id>git-branchless</id>
     <id>git-cola</id>
     <id>git-flow-hooks</id>
     <id>git-interactive-rebase-tool</id>
@@ -27544,7 +27517,6 @@
     <id>havdetectiontool</id>
     <id>haxm</id>
     <id>hazelcast</id>
-    <id>hbcd</id>
     <id>hcloud.portable</id>
     <id>hddguardian.install</id>
     <id>hddguardian.portable</id>
@@ -28008,20 +27980,17 @@
     <id>lanmessenger</id>
     <id>lansweeper</id>
     <id>lanxchange</id>
-    <id>laravel-herd</id>
     <id>lastactivityview</id>
     <id>lastools</id>
     <id>latexml</id>
     <id>latin-modern-fonts</id>
     <id>launch4j</id>
     <id>launchbox</id>
-    <id>launcher</id>
     <id>layer0</id>
     <id>lazarus</id>
     <id>lazpaint</id>
     <id>lazydocker</id>
     <id>lazygit</id>
-    <id>lc0-cuda</id>
     <id>lcov</id>
     <id>ldapadmin</id>
     <id>ldc</id>
@@ -28221,7 +28190,6 @@
     <id>mdprojecttimer</id>
     <id>mdt</id>
     <id>meatplay</id>
-    <id>mechpack1</id>
     <id>mechpack2</id>
     <id>medford.portable</id>
     <id>media-preview</id>
@@ -28315,7 +28283,6 @@
     <id>moderncsv</id>
     <id>modgallery</id>
     <id>modsecurity</id>
-    <id>mokapi</id>
     <id>moldflowc</id>
     <id>moldy</id>
     <id>monaco</id>
@@ -28748,8 +28715,6 @@
     <id>openbve</id>
     <id>openchrom</id>
     <id>opencodecs</id>
-    <id>opencomic.portable</id>
-    <id>opencomic</id>
     <id>opencommandline</id>
     <id>openconnect</id>
     <id>opencover.install</id>
@@ -28919,7 +28884,6 @@
     <id>performance-monitor</id>
     <id>perfview</id>
     <id>perfwatsonmonitor</id>
-    <id>perimeter81</id>
     <id>persianbingcalendar</id>
     <id>pesecurity</id>
     <id>pesieve</id>
@@ -28994,7 +28958,6 @@
     <id>popcorn-time</id>
     <id>popcorntime</id>
     <id>portable-library-tools-2</id>
-    <id>portal</id>
     <id>portexpert</id>
     <id>portfolio</id>
     <id>portmon</id>
@@ -29092,9 +29055,7 @@
     <id>prometheus-windows-exporter.install</id>
     <id>prometheus</id>
     <id>pronterface</id>
-    <id>protonmail</id>
     <id>prototyper</id>
-    <id>proxyman</id>
     <id>proxyswitcher</id>
     <id>proxytrace</id>
     <id>ps-remote-play</id>
@@ -29135,7 +29096,6 @@
     <id>purescript</id>
     <id>puretext</id>
     <id>purple-facebook</id>
-    <id>purview-ir</id>
     <id>pushbullet</id>
     <id>pushcsv</id>
     <id>pushmonitoff</id>
@@ -29160,7 +29120,6 @@
     <id>python.pypy</id>
     <id>python3-virtualenv</id>
     <id>pythonnet</id>
-    <id>pythonrest</id>
     <id>pytivo-lucasnz</id>
     <id>pytivo-wmcbrine</id>
     <id>pywin32</id>
@@ -29574,7 +29533,6 @@
     <id>shellrunas</id>
     <id>shellsend</id>
     <id>shellz</id>
-    <id>sheltasks-cli</id>
     <id>sherwood.portable</id>
     <id>shexview.install</id>
     <id>shexview.portable</id>
@@ -29821,8 +29779,6 @@
     <id>sqlpsx</id>
     <id>sqlsentryplanexplorer</id>
     <id>sqlserver-cmdlineutils</id>
-    <id>sqlserver-odbcdriver-17</id>
-    <id>sqlserver-odbcdriver-18</id>
     <id>sqlserver-odbcdriver</id>
     <id>sqlserver2008r2express-engine</id>
     <id>sqlserver2008r2express-managementstudio</id>
@@ -30043,7 +29999,6 @@
     <id>temple.portable</id>
     <id>tencentdocs</id>
     <id>tencentqq</id>
-    <id>tenv</id>
     <id>terapad</id>
     <id>terminals.app</id>
     <id>termscp</id>
@@ -30061,7 +30016,6 @@
     <id>teslamap</id>
     <id>test-pipeline</id>
     <id>testdriven.net</id>
-    <id>testmyapp</id>
     <id>tetris-java</id>
     <id>texniccenter</id>
     <id>text-to-mp3-converter</id>
@@ -30108,7 +30062,6 @@
     <id>tidytabs.portable</id>
     <id>tigervnc-viewer</id>
     <id>tiled</id>
-    <id>tileiconifier</id>
     <id>tilemaker</id>
     <id>tilt</id>
     <id>tim</id>
@@ -30207,8 +30160,6 @@
     <id>twister-webkit</id>
     <id>twitch-bandwidth-tester</id>
     <id>twitch</id>
-    <id>twitchdownloader-cli</id>
-    <id>twitchdownloader-gui</id>
     <id>twsnmp</id>
     <id>typemockisolator.net</id>
     <id>typescript.vs2013</id>
@@ -30270,7 +30221,6 @@
     <id>uniws</id>
     <id>unknownhorizons</id>
     <id>unrar</id>
-    <id>unused-deps</id>
     <id>unxutils</id>
     <id>unzip</id>
     <id>upackx</id>
@@ -30288,7 +30238,6 @@
     <id>usbip</id>
     <id>usblogon</id>
     <id>usblogview</id>
-    <id>usbpid-win</id>
     <id>userassistview</id>
     <id>userprofilesview</id>
     <id>ut-client</id>
@@ -30333,8 +30282,6 @@
     <id>verizonmessageplus</id>
     <id>veryseriousbutton</id>
     <id>vh7-cli</id>
-    <id>vial-kb.install</id>
-    <id>vial-kb.portable</id>
     <id>vibrancegui</id>
     <id>victoria</id>
     <id>vidcutter</id>
@@ -30966,7 +30913,6 @@
     <id>worimager</id>
     <id>workcad</id>
     <id>workflow_cmd</id>
-    <id>workspace</id>
     <id>wot</id>
     <id>wow-stat</id>
     <id>wowup-cf</id>
@@ -30988,7 +30934,6 @@
     <id>wsl-ubuntu-1804</id>
     <id>wsl-ubuntu-2204</id>
     <id>wsl2-distro-manager</id>
-    <id>wsl2host</id>
     <id>wszst</id>
     <id>wtime</id>
     <id>wtw</id>
@@ -31122,7 +31067,6 @@
     <id>zig</id>
     <id>zim</id>
     <id>zimbra-desktop</id>
-    <id>zimbradesktop</id>
     <id>zip</id>
     <id>zipinst</id>
     <id>znotes</id>

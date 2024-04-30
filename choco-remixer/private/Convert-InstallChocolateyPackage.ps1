@@ -16,8 +16,10 @@
         removeMSI        = $obj.removeMSI
         removeMSU        = $obj.removeMSU
         doubleQuotesUrl  = $obj.doubleQuotesUrl
+        replaceFilenames = $obj.replaceFilenames
         checksumTypeType = $obj.checksumTypeType
         checksumArgsType = $obj.checksumArgsType
+        doubleQuotesChecksum = $obj.doubleQuotesChecksum
     }
 
     $obj.installScriptMod = Edit-InstallChocolateyPackage @editInstallChocolateyPackageArgs

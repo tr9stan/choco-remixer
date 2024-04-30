@@ -4,6 +4,11 @@
 [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingInvokeExpression', '', Justification = 'Couldnt figure out an alternative', Scope = 'Function', Target = 'Convert-KB3063858')]
 [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingInvokeExpression', '', Justification = 'Couldnt figure out an alternative', Scope = 'Function', Target = 'Convert-KB3118401')]
 param()
+
+Function Test-PkgFunctionsDefined() {
+    Write-Warning "Ignore This"
+}
+
 Function Convert-dotnetfx ([PackageInternalizeInfo]$obj) {
     $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern ' url +').tostring()
     $url32 = ($fullurl32 -split "'" | Select-String -Pattern "http").tostring()
@@ -311,8 +316,8 @@ Function Convert-KB3063858 ([PackageInternalizeInfo]$obj) {
     Invoke-Expression $installScriptExec
 
     #6.0-client and 6.0-server are the same in this case, with the the same URLs.
-#    $msudata.GetEnumerator() | Where-Object { $_.key -notmatch "6.0-client" } | ForEach-Object {
-    $msudata.GetEnumerator() |  ForEach-Object {
+    #    $msudata.GetEnumerator() | Where-Object { $_.key -notmatch "6.0-client" } | ForEach-Object {
+    $msudata.GetEnumerator() | ForEach-Object {
         if ($_.value.url) {
             $url = $_.value.url
             $checksum = $_.value.checksum

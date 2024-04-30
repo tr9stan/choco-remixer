@@ -133,6 +133,11 @@
     }
 
     [XML]$packagesXMLContent = Get-Content $pkgXML
+    $notImplementedIdsTableLower = @{}
+    ForEach ($id in $packagesXMLContent.packages.notImplemented.id){
+        $notImplementedIdsTableLower.Add($id.ToLower(),"1")
+    }
+
     [XML]$configXMLContent = Get-Content $configXML
     [xml]$internalizedXMLContent = Get-Content $internalizedXML
     if (!(Test-Path $downloadXML)) {
@@ -241,6 +246,6 @@
         $global:remixerLocale = "en-US"
     }
 
-    $versioningDLLPath = [IO.Path]::Combine((Split-Path $PSScriptRoot),"private","Chocolatey.NuGet.Versioning.3.4.2","lib","netstandard2.0","Chocolatey.NuGet.Versioning.dll")
+    $versioningDLLPath = [IO.Path]::Combine((Split-Path $PSScriptRoot), "private", "Chocolatey.NuGet.Versioning.3.4.2", "lib", "netstandard2.0", "Chocolatey.NuGet.Versioning.dll")
     Add-Type -Path $versioningDLLPath
 }

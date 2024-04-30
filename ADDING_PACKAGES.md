@@ -99,6 +99,8 @@ This function edits the install script and downloads the installer(s) for standa
 - 5: `" Url32bit "`, `" Url64bit "`
 - 6: `'\$url\s+='`, `'\$url64\s+='`
 - 7: `'\s+url\s+='`, `'\s+url64\s+='`
+- 8: `'\s+url32\s+='`, `'\s+url64\s+='`
+- 9: `'\s+url\s+='`, `'\s+url64bit\s+='`
 
 ## `$argsType` sets how to parse the argument splatted for `Install-ChocolateyPackage`
 - 0: for `packageArgs = @{`
@@ -111,14 +113,16 @@ This function edits the install script and downloads the installer(s) for standa
 - 3: `'  checksum32  '`,`'  checksum64  '`
 - 4: `' checksum '`,`' Checksum64 '`
 - 5: `'\schecksum\s+='`,`'\schecksum64\s+='`
-- 6: `'\schecksum\s+='`,`'\schecksum64\s+='` with double quotes url
+- 6: `'\schecksum\s+='`,`'\schecksum64\s+='` with double quotes url (legacy, use `$doubleQuotesChecksum` instead)
 - 7: `'\$checksum\s+='`,`'\$checksum64\s+='`
 
 ## Misc other options
 - `$doubleQuotesUrl`, if urls are surrounded by double quotes instead of single
+- `$doubleQuotesChecksum`, if checksums are surrounded by double quotes instead of single
 - `$stripQueryString`, to strip everything after `?` from the url
 - `$DeEncodeSpace`, to switch `%20` to `" "`
 - `$x64NameExt`, to add `_x64` to the 64 bit filename
 - `$removeEXE`, to add a line to the end of the script that removes all `.exe` files from the tools directory
 - `$removeMSI`, to add a line to the end of the script that removes all `.msi` files from the tools directory
 - `$removeMSU`, to add a line to the end of the script that removes all `.msi` files from the tools directory
+- `$replaceFilenames`, to use filenames in the format `<id>-<version>-<architecture>.<extension>` instead of filenames parsed from the download urls

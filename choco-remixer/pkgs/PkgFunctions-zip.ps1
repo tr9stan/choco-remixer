@@ -218,7 +218,7 @@ Function Convert-dotnet4.0 ([PackageInternalizeInfo]$obj) {
     $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.zip'
 
     #No checksum in package
-    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir
+    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksumTypeType "md5"
 }
 
 Function Convert-setacl ([PackageInternalizeInfo]$obj) {
@@ -269,7 +269,7 @@ Function Convert-itunes ([PackageInternalizeInfo]$obj) {
 
 Function Convert-rust-ms ([PackageInternalizeInfo]$obj) {
     $int = 0
-    [array]$installScriptSplit =  $obj.installScriptOrig -split "\n"
+    [array]$installScriptSplit = $obj.installScriptOrig -split "\n"
 
     while ($installScriptSplit[$int] -notlike "*Updates*") {
         [string]$installScriptVars += $installScriptSplit[$int] + "`n"
@@ -523,8 +523,8 @@ Function Convert-7zip-zstd ([PackageInternalizeInfo]$obj) {
     $extractLocation = '$extractLocation = Join-Path $toolsDir "Codecs"'
     $archiveLocation = '$archiveLocation = if ((Get-OSArchitectureWidth 64) -and $env:chocolateyForceX86 -ne $true) { $file64 } else { $file }'
 
-    $obj.installScriptMod = $obj.installScriptMod  -replace '\$archiveLocation\s+=' , "#$&"
-    $obj.installScriptMod = $obj.installScriptMod  -replace '\$extractLocation\s+=' , "#$&"
+    $obj.installScriptMod = $obj.installScriptMod -replace '\$archiveLocation\s+=' , "#$&"
+    $obj.installScriptMod = $obj.installScriptMod -replace '\$extractLocation\s+=' , "#$&"
     $obj.installScriptMod = $extractLocation + "`n" + $obj.InstallScriptMod
     $obj.installScriptMod = $archiveLocation + "`n" + $obj.InstallScriptMod
     $obj.installScriptMod = $filePath32 + "`n" + "$filePath64" + "`n" + $obj.InstallScriptMod
@@ -591,4 +591,20 @@ Function Convert-winmtr-redux ([PackageInternalizeInfo]$obj) {
     $checksum32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern ' checksum ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
 
     Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum32
+}
+
+Function Convert-fbx2gltf ([PackageInternalizeInfo]$obj) {
+    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern ' url64bit ').tostring()
+    $url64 = ($fullurl64 -split "'" | Select-String -Pattern "http").ToString()
+    $filename64 = ($url64 -split "/" | Select-Object -Last 1).tostring()
+    $filePath64 = 'FileFullPath   = (Join-Path $toolsDir "' + $filename64 + '")'
+
+    $obj.installScriptMod = $obj.installScriptMod -replace "Install-ChocolateyZipPackage" , "Get-ChocolateyUnzip"
+    $obj.installScriptMod = $obj.installScriptMod -replace "UnzipLocation" , "Destination"
+    $obj.installScriptMod = $obj.installScriptMod -replace "= @{" , "$&`n  $filePath64"
+    $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.zip'
+
+    $checksum64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern ' checksum64 ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+
+    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url64 -filename $filename64 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum64
 }

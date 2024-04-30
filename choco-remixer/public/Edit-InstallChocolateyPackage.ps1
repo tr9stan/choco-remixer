@@ -18,6 +18,8 @@ Function Edit-InstallChocolateyPackage {
         [switch]$removeMSI,
         [switch]$removeMSU,
         [switch]$doubleQuotesUrl,
+        [switch]$doubleQuotesChecksum,
+        [switch]$replaceFilenames,
         [parameter(Mandatory = $true)]
         [ValidateSet('md5', 'sha1', 'sha256', 'sha512')]
         [string]$checksumTypeType,
@@ -108,6 +110,24 @@ Function Edit-InstallChocolateyPackage {
             }
             Break
         }
+        8 {
+            if ($x32) {
+                $fullurl32 = ($installScript -split "`n" | Select-String -Pattern '\s+url32\s+=').tostring()
+            }
+            if ($x64) {
+                $fullurl64 = ($installScript -split "`n" | Select-String -Pattern '\s+url64\s+=').tostring()
+            }
+            Break
+        }
+        9 {
+            if ($x32) {
+                $fullurl32 = ($installScript -split "`n" | Select-String -Pattern '\s+url\s+=').tostring()
+            }
+            if ($x64) {
+                $fullurl64 = ($installScript -split "`n" | Select-String -Pattern '\s+url64bit\s+=').tostring()
+            }
+            Break
+        }
         Default {
             Write-Error "could not find url type"
         }
@@ -158,6 +178,25 @@ Function Edit-InstallChocolateyPackage {
         $filename64 = $filename64.Insert(($filename64.Length - 4), "_x64")
     }
 
+    if ($replaceFilenames) {
+        if ($removeEXE) {
+            $fileType = 'exe'
+        } elseif ($removeMSI) {
+            $fileType = 'msi'
+        } elseif ($removeMSU) {
+            $fileType = 'msu'
+        } else {
+            Write-Error "No remove file type specified, this is required when replaceFilenames is specified"
+        }
+
+        if ($x32) {
+            $filename32 = "$nuspecID-$version-x32.$fileType"
+        }
+        if ($x64) {
+            $filename64 = "$nuspecID-$version-x64.$fileType"
+        }
+    }
+
 
     if ($argstype -eq 0) {
         if ($architecture -eq "x32") {
@@ -188,7 +227,7 @@ Function Edit-InstallChocolateyPackage {
     }
 
 
-    $installScriptMod = $installScriptMod -replace "^Install-ChocolateyPackage\s|\sInstall-ChocolateyPackage\s" , " Install-ChocolateyInstallPackage "
+    $installScriptMod = $installScriptMod -replace "^Install-ChocolateyPackage\s|\sInstall-ChocolateyPackage\s" , "`nInstall-ChocolateyInstallPackage "
 
     if ($needsTools) {
         $installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $installScriptMod
@@ -206,25 +245,31 @@ Function Edit-InstallChocolateyPackage {
         $installScriptMod = $installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.msu'
     }
 
+    if ($doubleQuotesChecksum) {
+        $checksumSplitString = '"'
+    } else {
+        $checksumSplitString = "'"
+    }
+
     Write-Information "Downloading $($NuspecID) files" -InformationAction Continue
     if ($checksumTypeType) {
         if ($x32) {
             if ($checksumArgsType -eq 0) {
-                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '  Checksum  ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '  Checksum  ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 1) {
-                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum32 ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum32 ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 2) {
-                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 3) {
-                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '  checksum32  ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '  checksum32  ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 4) {
-                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '\schecksum\s').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '\schecksum\s').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 5) {
-                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '\schecksum\s+=').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '\schecksum\s+=').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 6) {
                 $checksum32 = ($installScript -split "`n" | Select-String -Pattern '\schecksum\s+=').tostring() -split '"' | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 7) {
-                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '\$checksum\s+=').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum32 = ($installScript -split "`n" | Select-String -Pattern '\$checksum\s+=').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } else {
                 Throw "Invalid checksumArgsType $checksumArgsType"
             }
@@ -232,21 +277,21 @@ Function Edit-InstallChocolateyPackage {
         }
         if ($x64) {
             if ($checksumArgsType -eq 0) {
-                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '  Checksum64  ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '  Checksum64  ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 1) {
-                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum64 ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum64 ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 2) {
-                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum64 ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '^\$checksum64 ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 3) {
-                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '  checksum64  ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '  checksum64  ').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 4) {
-                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '\sChecksum64\s').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '\sChecksum64\s').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 5) {
-                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '\sChecksum64\s+=').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '\sChecksum64\s+=').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 6) {
                 $checksum64 = ($installScript -split "`n" | Select-String -Pattern '\sChecksum64\s+=').tostring() -split '"' | Select-Object -Last 1 -Skip 1
             } elseif ($checksumArgsType -eq 7) {
-                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '\$checksum64\s+=').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+                $checksum64 = ($installScript -split "`n" | Select-String -Pattern '\$checksum64\s+=').tostring() -split $checksumSplitString | Select-Object -Last 1 -Skip 1
             } else {
                 Throw "Invalid checksumArgsType $checksumArgsType"
             }
