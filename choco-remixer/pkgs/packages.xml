@@ -53,6 +53,7 @@
     <id>ai-web-originalip</id>
     <id>aida64extreme</id>
     <id>airship</id>
+    <id>airshipper</id>
     <id>airstream-futuropolis-regular-font</id>
     <id>ajour-opengl</id>
     <id>aksctl</id>
@@ -62,6 +63,7 @@
     <id>alanstevens.utils.vm</id>
     <id>alanstevens.utils</id>
     <id>alcohol52-free</id>
+    <id>aleapp-gui</id>
     <id>aleapp</id>
     <id>allbrowsers</id>
     <id>alldup</id>
@@ -437,6 +439,7 @@
     <id>chocopm.install</id>
     <id>chocoshortcuts</id>
     <id>chocoupdater</id>
+    <id>chocoversionselect</id>
     <id>choosenim</id>
     <id>chrlauncher.portable</id>
     <id>chromas</id>
@@ -471,6 +474,7 @@
     <id>cloneapp</id>
     <id>cloudformation-guard</id>
     <id>cloudquery</id>
+    <id>cmag</id>
     <id>cmail</id>
     <id>cmake.install</id>
     <id>cmake.portable</id>
@@ -561,6 +565,7 @@
     <id>crystaldiskinfo.install</id>
     <id>crystaldiskinfo.portable</id>
     <id>crystaldiskinfo</id>
+    <id>crystaldiskmark.install</id>
     <id>crystaldiskmark.portable</id>
     <id>crystaldiskmark</id>
     <id>csound</id>
@@ -851,10 +856,12 @@
     <id>empoche</id>
     <id>emulationstation</id>
     <id>emulsion</id>
+    <id>en-croissant</id>
     <id>encfs4win</id>
     <id>encfsmp</id>
     <id>encryption-software</id>
     <id>enki</id>
+    <id>epg123</id>
     <id>epr</id>
     <id>epsviewer</id>
     <id>epub-checker</id>
@@ -878,6 +885,7 @@
     <id>everything.beta</id>
     <id>everything</id>
     <id>eviacam</id>
+    <id>evtxecmd</id>
     <id>exifviewer-chrome</id>
     <id>expandrive</id>
     <id>explorer-expand-to-current-folder</id>
@@ -891,6 +899,7 @@
     <id>extraterm.install</id>
     <id>extraterm.portable</id>
     <id>extraterm</id>
+    <id>ezviewer</id>
     <id>f.lux</id>
     <id>faas-cli</id>
     <id>fab</id>
@@ -1046,6 +1055,7 @@
     <id>gh</id>
     <id>ghostscript.app</id>
     <id>ghostscript</id>
+    <id>giada</id>
     <id>gifski</id>
     <id>gimmieaguid</id>
     <id>git-absorb</id>
@@ -1212,6 +1222,7 @@
     <id>hardentools</id>
     <id>hardware-freak</id>
     <id>hash-r</id>
+    <id>hashcat</id>
     <id>hashcheck</id>
     <id>hasher-erz</id>
     <id>hashmyfiles</id>
@@ -1229,6 +1240,7 @@
     <id>helio-workstation</id>
     <id>hemtt</id>
     <id>hercules</id>
+    <id>herd</id>
     <id>heroku-cli</id>
     <id>heroku-toolbelt</id>
     <id>hexchat</id>
@@ -1378,6 +1390,7 @@
     <id>javaruntime</id>
     <id>jayhankins.conemuconfig</id>
     <id>jcpicker</id>
+    <id>jenkins-set-prefix.hook</id>
     <id>jenkins</id>
     <id>jenkinsondesktop</id>
     <id>jfrog-cli-v2-jf</id>
@@ -1536,6 +1549,7 @@
     <id>lf</id>
     <id>lgs.g700s</id>
     <id>libdvdcss-2</id>
+    <id>libgit2</id>
     <id>libre-baskerville.font</id>
     <id>libre-hardware-monitor</id>
     <id>librebarcode.font</id>
@@ -1544,6 +1558,7 @@
     <id>librehardwaremonitor</id>
     <id>libreoffice-oldstable</id>
     <id>libreoffice</id>
+    <id>librepcb</id>
     <id>libressl</id>
     <id>libskycoinnet</id>
     <id>licecap</id>
@@ -1565,6 +1580,7 @@
     <id>little-system-cleaner</id>
     <id>livesplit</id>
     <id>livestreamer-twitch-gui</id>
+    <id>lldb-mi</id>
     <id>lmms</id>
     <id>loc</id>
     <id>localadminwmi</id>
@@ -1688,6 +1704,7 @@
     <id>mfcmapi</id>
     <id>mft2csv</id>
     <id>mftecmd</id>
+    <id>mftexplorer</id>
     <id>microsoft-build-tools</id>
     <id>microsoft-message-analyzer</id>
     <id>microsoft-powershellforgithub-psmodule</id>
@@ -1998,6 +2015,7 @@
     <id>office-to-pdf</id>
     <id>office-tool</id>
     <id>officecustomuieditor</id>
+    <id>ofgb</id>
     <id>ofview</id>
     <id>ojdkbuild11</id>
     <id>ojdkbuild17</id>
@@ -2115,6 +2133,7 @@
     <id>pdfshaperpro</id>
     <id>pdftk-java</id>
     <id>pdftkbuilder</id>
+    <id>pdftoolkit</id>
     <id>pdfxchangeviewer</id>
     <id>pdq-deploy</id>
     <id>pdq-inventory</id>
@@ -2329,6 +2348,7 @@
     <id>quickstart.defaultinstall</id>
     <id>quikpak</id>
     <id>quiterss</id>
+    <id>quodlibet.install</id>
     <id>quodlibet</id>
     <id>quollwriter</id>
     <id>qutebrowser.install</id>
@@ -2362,6 +2382,8 @@
     <id>reactos-paint</id>
     <id>readarr</id>
     <id>rebus.snoop</id>
+    <id>recentfilecacheparser</id>
+    <id>recmd</id>
     <id>recuva.portable</id>
     <id>redis-64</id>
     <id>redis</id>
@@ -2419,6 +2441,7 @@
     <id>ripple</id>
     <id>rivet</id>
     <id>rke</id>
+    <id>rla</id>
     <id>rm-glob</id>
     <id>rmstale</id>
     <id>rnp</id>
@@ -2514,6 +2537,7 @@
     <id>search-by-image-chrome</id>
     <id>search-sql-server-database</id>
     <id>searchwithmybrowser</id>
+    <id>secondfactor</id>
     <id>secondstrategy.baseline.utilities</id>
     <id>secret-maryo-chronicles</id>
     <id>section-9-regular-font</id>
@@ -2535,6 +2559,7 @@
     <id>selenium-all-drivers</id>
     <id>selenium-chrome-driver</id>
     <id>selenium-gecko-driver</id>
+    <id>selenium.powershell</id>
     <id>seleniumgridinabox.node</id>
     <id>seleniumhub</id>
     <id>sendkeys.extension</id>
@@ -2628,6 +2653,7 @@
     <id>snoop</id>
     <id>snort</id>
     <id>soft-cleaner</id>
+    <id>softcleaner</id>
     <id>softhsm.install</id>
     <id>softhsm.portable</id>
     <id>softhsm</id>
@@ -2672,6 +2698,7 @@
     <id>sqlcequery</id>
     <id>sqlean-shell</id>
     <id>sqlean</id>
+    <id>sqlecmd</id>
     <id>sqlgrep</id>
     <id>sqlite-shell-x64</id>
     <id>sqlite.analyzer</id>
@@ -2686,6 +2713,7 @@
     <id>sqlitestudio</id>
     <id>sqlstudio</id>
     <id>squashfs</id>
+    <id>srumecmd</id>
     <id>srwareiron</id>
     <id>ssh-chat</id>
     <id>ssh-copy-id</id>
@@ -2737,6 +2765,7 @@
     <id>sumatrapdf.install</id>
     <id>sumatrapdf.portable</id>
     <id>sumatrapdf</id>
+    <id>sumecmd</id>
     <id>summerfun</id>
     <id>sunset-screen</id>
     <id>sunshine</id>
@@ -2817,11 +2846,15 @@
     <id>tesseract</id>
     <id>test-oracleconnect.powershell</id>
     <id>testcentric-experimental-gui</id>
+    <id>testcentric-extension-net20-pluggable-agent</id>
+    <id>testcentric-extension-net40-pluggable-agent</id>
     <id>testcentric-extension-net462-pluggable-agent</id>
     <id>testcentric-extension-net50-pluggable-agent</id>
     <id>testcentric-extension-net60-pluggable-agent</id>
     <id>testcentric-extension-net70-pluggable-agent</id>
     <id>testcentric-extension-net80-pluggable-agent</id>
+    <id>testcentric-extension-netcore21-pluggable-agent</id>
+    <id>testcentric-extension-netcore31-pluggable-agent</id>
     <id>testcentric-gui</id>
     <id>testdisk-photorec</id>
     <id>testdisk</id>
@@ -3170,11 +3203,13 @@
     <id>win-acme-validation-dns-azure</id>
     <id>win-acme-validation-dns-cloudflare</id>
     <id>win-acme-validation-dns-digitalocean</id>
+    <id>win-acme-validation-dns-dnsexit</id>
     <id>win-acme-validation-dns-dnsmadeeasy</id>
     <id>win-acme-validation-dns-domeneshop</id>
     <id>win-acme-validation-dns-dreamhost</id>
     <id>win-acme-validation-dns-godaddy</id>
     <id>win-acme-validation-dns-googledns</id>
+    <id>win-acme-validation-dns-hetzner</id>
     <id>win-acme-validation-dns-infomaniak</id>
     <id>win-acme-validation-dns-linode</id>
     <id>win-acme-validation-dns-luadns</id>
@@ -5850,6 +5885,13 @@
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
     <pkg>
+      <id>bonjour</id>
+      <functionName>Convert-bonjour</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>no</needsToolsDir>
+      <architecture>both</architecture>
+    </pkg>
+    <pkg>
       <id>borderlessgaming</id>
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
@@ -8247,6 +8289,13 @@
     </pkg>
     <pkg>
       <functionName>Convert-dotnetcore-general-internalizer</functionName>
+      <id>dotnet-8.0-sdk-3xx</id>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <whyNotInternal>size</whyNotInternal>
+    </pkg>
+    <pkg>
+      <functionName>Convert-dotnetcore-general-internalizer</functionName>
       <id>dotnet-9.0-aspnetruntime</id>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
@@ -10389,7 +10438,7 @@
       <urlType>6</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
-      <checksumArgsType>5</checksumArgsType>
+      <checksumArgsType>7</checksumArgsType>
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
@@ -13265,7 +13314,7 @@
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
-      <architecture>both</architecture>
+      <architecture>x32</architecture>
       <urlType>6</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
@@ -15899,7 +15948,7 @@
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
       <architecture>x32</architecture>
-      <urlType>6</urlType>
+      <urlType>7</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
       <checksumArgsType>5</checksumArgsType>
@@ -18730,19 +18779,6 @@
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
     <pkg>
-      <id>quodlibet.install</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
-      <needsStopAction>no</needsStopAction>
-      <needsToolsDir>yes</needsToolsDir>
-      <architecture>x32</architecture>
-      <urlType>6</urlType>
-      <argsType>0</argsType>
-      <removeEXE>yes</removeEXE>
-      <checksumArgsType>7</checksumArgsType>
-      <checksumTypeType>sha256</checksumTypeType>
-      <whyNotInternal>ToDetermine</whyNotInternal>
-    </pkg>
-    <pkg>
       <id>qview.install</id>
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
@@ -20685,7 +20721,7 @@
       <needsStopAction>yes</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
       <architecture>both</architecture>
-      <urlType>6</urlType>
+      <urlType>4</urlType>
       <argsType>0</argsType>
       <removeMSI>yes</removeMSI>
       <checksumArgsType>5</checksumArgsType>
@@ -24508,11 +24544,11 @@
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
-      <architecture>both</architecture>
-      <urlType>1</urlType>
+      <architecture>x32</architecture>
+      <urlType>6</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
-      <checksumArgsType>1</checksumArgsType>
+      <checksumArgsType>7</checksumArgsType>
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
@@ -24706,6 +24742,19 @@
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>7</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>webview2-runtime</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>no</needsToolsDir>
       <architecture>x32</architecture>
       <urlType>7</urlType>
       <argsType>0</argsType>
@@ -25628,15 +25677,9 @@
     </pkg>
     <pkg>
       <id>yarn</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <functionName>Convert-yarn</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
-      <architecture>x32</architecture>
-      <urlType>0</urlType>
-      <argsType>0</argsType>
-      <removeMSI>yes</removeMSI>
-      <checksumArgsType>4</checksumArgsType>
-      <checksumTypeType>sha512</checksumTypeType>
       <whyNotInternal>maintainer</whyNotInternal>
     </pkg>
     <pkg>
@@ -25939,6 +25982,86 @@
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
+    <pkg>
+      <id>7-taskbar-tweaker</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>yes</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>6</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>7</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>aquasnap</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>yes</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>6</urlType>
+      <argsType>0</argsType>
+      <removeMSI>yes</removeMSI>
+      <checksumArgsType>7</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>asana</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>both</architecture>
+      <urlType>7</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <replaceFilenames>yes</replaceFilenames>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>azure-arc</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>6</urlType>
+      <argsType>0</argsType>
+      <removeMSI>yes</removeMSI>
+      <checksumArgsType>7</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>balsamiqwireframes</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>both</architecture>
+      <urlType>9</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>chainner</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x64</architecture>
+      <urlType>9</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <replaceFilenames>yes</replaceFilenames>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
   </implemented>
   <notImplemented>
     <id>010editor.portable</id>
@@ -25958,7 +26081,6 @@
     <id>3proxy</id>
     <id>3rvx</id>
     <id>4t-tray-minimizer</id>
-    <id>7-taskbar-tweaker</id>
     <id>7kaa</id>
     <id>9kw-client</id>
     <id>aacgain</id>
@@ -25974,6 +26096,7 @@
     <id>accessdirector</id>
     <id>accessenum</id>
     <id>accesspv</id>
+    <id>acli</id>
     <id>acm</id>
     <id>acme-sh</id>
     <id>acr</id>
@@ -26114,7 +26237,6 @@
     <id>appvprovider</id>
     <id>apricot</id>
     <id>aqt</id>
-    <id>aquasnap</id>
     <id>archi</id>
     <id>archiver</id>
     <id>arduinoidegalileo</id>
@@ -26134,7 +26256,6 @@
     <id>aruba-networks-virtual-intranet-access-client</id>
     <id>arxiv-collector</id>
     <id>as-ssd</id>
-    <id>asana</id>
     <id>asar7z</id>
     <id>asciidocfx.portable</id>
     <id>asciidoctorj</id>
@@ -26205,7 +26326,6 @@
     <id>azshell</id>
     <id>aztfexport</id>
     <id>aztfy</id>
-    <id>azure-arc</id>
     <id>azure-cosmosdb-emulator</id>
     <id>azure-documentdb-emulator</id>
     <id>azure-functions-core-tools-2</id>
@@ -26228,7 +26348,6 @@
     <id>bacula</id>
     <id>baidupcs-go</id>
     <id>balsamiqmockups.install</id>
-    <id>balsamiqwireframes</id>
     <id>banana-buchhaltung</id>
     <id>bandizip</id>
     <id>banks.portable</id>
@@ -26328,9 +26447,9 @@
     <id>bluetoothlogview</id>
     <id>bluetoothview</id>
     <id>blur-ie</id>
+    <id>bmake</id>
     <id>bmfont</id>
     <id>bombardier</id>
-    <id>bonjour</id>
     <id>bonobo-git-server</id>
     <id>boost-msvc-12</id>
     <id>boost-msvc-14.1</id>
@@ -26359,6 +26478,7 @@
     <id>brightauthor</id>
     <id>brightauthorconnected</id>
     <id>brogue</id>
+    <id>browser-tamer</id>
     <id>browserbeat</id>
     <id>browsermanager</id>
     <id>browsersync</id>
@@ -26394,6 +26514,8 @@
     <id>bulkrenameutility</id>
     <id>bulletspassview.install</id>
     <id>bulletspassview.portable</id>
+    <id>bun-baseline</id>
+    <id>bun</id>
     <id>bundlerminifier</id>
     <id>bunqdesktop</id>
     <id>burp-suite-free-edition</id>
@@ -26452,7 +26574,6 @@
     <id>cfsec</id>
     <id>cgithubinst</id>
     <id>chainlp</id>
-    <id>chainner</id>
     <id>chainsaw</id>
     <id>chandler</id>
     <id>change-dns-servers</id>
@@ -26683,6 +26804,7 @@
     <id>cupscale</id>
     <id>curse-voice</id>
     <id>cursor-commander</id>
+    <id>cursoride</id>
     <id>customexplorertoolbar</id>
     <id>cutter</id>
     <id>cxcli</id>
@@ -27471,6 +27593,7 @@
     <id>gping</id>
     <id>gpower</id>
     <id>gps-sdr-sim</id>
+    <id>gpt4all</id>
     <id>gptgen</id>
     <id>gpxeditor</id>
     <id>graalvm-java11</id>
@@ -27533,6 +27656,7 @@
     <id>handle</id>
     <id>hardware-identify.portable</id>
     <id>hardwipe</id>
+    <id>harmony-sase</id>
     <id>haroopad</id>
     <id>hashdeep</id>
     <id>hasher</id>
@@ -27583,6 +27707,7 @@
     <id>hikvision-sadp</id>
     <id>hitmanpro</id>
     <id>hledger</id>
+    <id>hmark</id>
     <id>hmne</id>
     <id>hobocopy</id>
     <id>hollowshunter</id>
@@ -27649,6 +27774,7 @@
     <id>iconsext.install</id>
     <id>iconsext.portable</id>
     <id>icsharp</id>
+    <id>idprt-sp320-label-printer-driver</id>
     <id>idris</id>
     <id>idrive</id>
     <id>ie10</id>
@@ -27771,6 +27897,7 @@
     <id>ironruby</id>
     <id>isapirewrite</id>
     <id>iscommandlineapp</id>
+    <id>islc</id>
     <id>iso7z</id>
     <id>isoplex</id>
     <id>isowriter</id>
@@ -27857,6 +27984,7 @@
     <id>karen</id>
     <id>katmouse</id>
     <id>kav</id>
+    <id>kaytu</id>
     <id>kb2454826</id>
     <id>kb2519277</id>
     <id>kb2533552</id>
@@ -27962,6 +28090,7 @@
     <id>kobito</id>
     <id>kodos</id>
     <id>kog</id>
+    <id>komorebi</id>
     <id>kontur-plugin</id>
     <id>kopano-ads-nightly</id>
     <id>kopano-deskapp-nightly</id>
@@ -27988,6 +28117,7 @@
     <id>kubernetes-helmfile</id>
     <id>kubernetes-kops</id>
     <id>kubernetes-node</id>
+    <id>kubetui</id>
     <id>kubeval</id>
     <id>kustomize</id>
     <id>kvrt</id>
@@ -28049,6 +28179,8 @@
     <id>librecrypt</id>
     <id>libreelec-usb-sd-creator</id>
     <id>libreoffice-help</id>
+    <id>librepcb.install</id>
+    <id>librepcb.portable</id>
     <id>librespeed-cli</id>
     <id>libsndfile</id>
     <id>libusbdotnet</id>
@@ -28209,6 +28341,7 @@
     <id>mcr-r2015b</id>
     <id>mcr-r2016b</id>
     <id>mcr-r2019a</id>
+    <id>mcr-r2020a</id>
     <id>mcr-r2020b</id>
     <id>mcr-r2021b</id>
     <id>mcr-r2022b</id>
@@ -28316,6 +28449,7 @@
     <id>modgallery</id>
     <id>modsecurity</id>
     <id>mokapi</id>
+    <id>mokka</id>
     <id>moldflowc</id>
     <id>moldy</id>
     <id>monaco</id>
@@ -28484,6 +28618,7 @@
     <id>neochat.install</id>
     <id>neocronce</id>
     <id>neovim</id>
+    <id>nerd-fonts-0xproto</id>
     <id>nerd-fonts-3270</id>
     <id>nerd-fonts-agave</id>
     <id>nerd-fonts-anonymouspro</id>
@@ -28492,9 +28627,12 @@
     <id>nerd-fonts-bigblueterminal</id>
     <id>nerd-fonts-bitstreamverasansmono</id>
     <id>nerd-fonts-cascadiacode</id>
+    <id>nerd-fonts-cascadiamono</id>
     <id>nerd-fonts-codenewroman</id>
     <id>nerd-fonts-comicshannsmono</id>
+    <id>nerd-fonts-commitmono</id>
     <id>nerd-fonts-cousine</id>
+    <id>nerd-fonts-d2coding</id>
     <id>nerd-fonts-daddytimemono</id>
     <id>nerd-fonts-dejavusansmono</id>
     <id>nerd-fonts-delugiabook</id>
@@ -28503,9 +28641,11 @@
     <id>nerd-fonts-delugiamono-powerline</id>
     <id>nerd-fonts-delugiapowerline</id>
     <id>nerd-fonts-droidsansmono</id>
+    <id>nerd-fonts-envycoder</id>
     <id>nerd-fonts-fantasquesansmono</id>
     <id>nerd-fonts-firacode</id>
     <id>nerd-fonts-firamono</id>
+    <id>nerd-fonts-geistmono</id>
     <id>nerd-fonts-go-mono</id>
     <id>nerd-fonts-gohu</id>
     <id>nerd-fonts-hack</id>
@@ -28517,13 +28657,17 @@
     <id>nerd-fonts-inconsolata</id>
     <id>nerd-fonts-inconsolatago</id>
     <id>nerd-fonts-inconsolatalgc</id>
+    <id>nerd-fonts-intelonemono</id>
     <id>nerd-fonts-iosevka</id>
     <id>nerd-fonts-iosevkaterm</id>
+    <id>nerd-fonts-iosevkatermslab</id>
     <id>nerd-fonts-jetbrainsmono</id>
     <id>nerd-fonts-lekton</id>
     <id>nerd-fonts-liberationmono</id>
     <id>nerd-fonts-lilex</id>
+    <id>nerd-fonts-martianmono</id>
     <id>nerd-fonts-meslo</id>
+    <id>nerd-fonts-monaspace</id>
     <id>nerd-fonts-monofur</id>
     <id>nerd-fonts-monoid</id>
     <id>nerd-fonts-mononoki</id>
@@ -28534,6 +28678,7 @@
     <id>nerd-fonts-overpass</id>
     <id>nerd-fonts-profont</id>
     <id>nerd-fonts-proggyclean</id>
+    <id>nerd-fonts-recursive</id>
     <id>nerd-fonts-robotomono</id>
     <id>nerd-fonts-sharetechmono</id>
     <id>nerd-fonts-sourcecodepro</id>
@@ -28542,7 +28687,9 @@
     <id>nerd-fonts-tinos</id>
     <id>nerd-fonts-ubuntu</id>
     <id>nerd-fonts-ubuntumono</id>
+    <id>nerd-fonts-ubuntusans</id>
     <id>nerd-fonts-victormono</id>
+    <id>nerd-fonts-zedmono</id>
     <id>nero-aac</id>
     <id>nessus-agent</id>
     <id>nestopia</id>
@@ -28896,6 +29043,9 @@
     <id>pdfarranger</id>
     <id>pdfcombine</id>
     <id>pdfconverter</id>
+    <id>pdfcreator-professional</id>
+    <id>pdfcreator-server</id>
+    <id>pdfcreator-terminal-server</id>
     <id>pdfedit</id>
     <id>pdffactorypro-workstation</id>
     <id>pdfsplitter</id>
@@ -29093,6 +29243,7 @@
     <id>prometheus</id>
     <id>pronterface</id>
     <id>protonmail</id>
+    <id>protonpass</id>
     <id>prototyper</id>
     <id>proxyman</id>
     <id>proxyswitcher</id>
@@ -29427,6 +29578,7 @@
     <id>rust</id>
     <id>rustdesk.install</id>
     <id>rustdesk.portable</id>
+    <id>rustrover</id>
     <id>rustup.install</id>
     <id>rutoken-drivers-removal-tool</id>
     <id>rutoken-drivers</id>
@@ -29467,6 +29619,7 @@
     <id>sauerbraten</id>
     <id>saxonhe</id>
     <id>sbcl</id>
+    <id>sbecmd</id>
     <id>sbom-tool-cli</id>
     <id>sbt</id>
     <id>sc3plugins</id>
@@ -29605,6 +29758,8 @@
     <id>simpleprogramdebugger</id>
     <id>simpleradiorecorder</id>
     <id>simplesystemtweaker</id>
+    <id>simplex.commandline</id>
+    <id>simplex</id>
     <id>simply-weather</id>
     <id>simutrans-pak128</id>
     <id>simutrans-pak64</id>
@@ -29661,10 +29816,12 @@
     <id>snagit-2020</id>
     <id>snake-java</id>
     <id>snaketail.portable</id>
+    <id>snapform-viewer</id>
     <id>snaplr</id>
     <id>snappy-driver-installer</id>
     <id>snarl</id>
     <id>snes9x</id>
+    <id>snet-cli</id>
     <id>sniffpass.install</id>
     <id>sniffpass.portable</id>
     <id>snipaste-beta</id>
@@ -29874,6 +30031,7 @@
     <id>stduviewer</id>
     <id>steam-cleaner</id>
     <id>steamcmd</id>
+    <id>steamlink</id>
     <id>stellar</id>
     <id>stern</id>
     <id>stexbar</id>
@@ -29917,6 +30075,7 @@
     <id>sumologic</id>
     <id>sundance</id>
     <id>sundial</id>
+    <id>sunset-berlin</id>
     <id>sunset-screen.portable</id>
     <id>supd2</id>
     <id>super-mario-bros-java</id>
@@ -30115,6 +30274,8 @@
     <id>time4popcorn</id>
     <id>timeit</id>
     <id>timestamp</id>
+    <id>timetravel</id>
+    <id>timetravelcli</id>
     <id>tinc</id>
     <id>tiny-brightness</id>
     <id>tiny-pxe-server</id>
@@ -30618,6 +30779,7 @@
     <id>voxengo-warmifier</id>
     <id>voxengo-water-chorus</id>
     <id>vpb-banking</id>
+    <id>vpilot</id>
     <id>vs2010.shellintegratedredist</id>
     <id>vs2010sdk</id>
     <id>vs2012.4</id>
@@ -30788,7 +30950,6 @@
     <id>webtoon-dl</id>
     <id>webvideocap.install</id>
     <id>webvideocap.portable</id>
-    <id>webview2-runtime</id>
     <id>wechat</id>
     <id>wecom</id>
     <id>weixin-dev-tools</id>
@@ -30803,6 +30964,7 @@
     <id>whatsapp</id>
     <id>whitebox.portable</id>
     <id>whiteboxtools-open-core</id>
+    <id>whkd</id>
     <id>whois</id>
     <id>whoiscl</id>
     <id>whoisconnectedsniffer</id>
@@ -31070,6 +31232,7 @@
     <id>yakyak</id>
     <id>yale.portable</id>
     <id>yammer-notifier</id>
+    <id>yandex-browser</id>
     <id>yandexdisk</id>
     <id>yanknote</id>
     <id>yasm</id>
