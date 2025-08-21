@@ -111,6 +111,7 @@
     <id>appveyor-server</id>
     <id>appveyorbyoc.powershell</id>
     <id>aptos</id>
+    <id>aqua</id>
     <id>arcanist</id>
     <id>archive</id>
     <id>archivo-narrow.font</id>
@@ -246,6 +247,7 @@
     <id>bind-toolsonly</id>
     <id>bing</id>
     <id>bingdesktop</id>
+    <id>biomejs-cli</id>
     <id>bird</id>
     <id>bitbucket-cli</id>
     <id>bitcoin-unlimited</id>
@@ -312,6 +314,7 @@
     <id>bulletspassview</id>
     <id>bumpy.portable</id>
     <id>bunnyhop</id>
+    <id>bunyan-logviewer</id>
     <id>burgertime</id>
     <id>burnawarefree</id>
     <id>burnawarepremium</id>
@@ -584,6 +587,8 @@
     <id>crystaldiskmark.install</id>
     <id>crystaldiskmark.portable</id>
     <id>crystaldiskmark</id>
+    <id>crystalmarkretro.install</id>
+    <id>crystalmarkretro.portable</id>
     <id>csound</id>
     <id>csvtk</id>
     <id>ctemplar</id>
@@ -605,6 +610,7 @@
     <id>cyberchef</id>
     <id>cyg-get</id>
     <id>cygwin</id>
+    <id>cynthia</id>
     <id>d2</id>
     <id>dable</id>
     <id>dankerino</id>
@@ -719,6 +725,7 @@
     <id>docfetcher</id>
     <id>docker-cli</id>
     <id>docker-compose</id>
+    <id>docker-credential-wincred</id>
     <id>docker-for-windows</id>
     <id>docker-kitematic</id>
     <id>docker-watch-forwarder</id>
@@ -739,6 +746,7 @@
     <id>dontsleep</id>
     <id>doom-sigil</id>
     <id>doom2-maps-scyte2</id>
+    <id>dopamine</id>
     <id>dos2unix</id>
     <id>dosbox</id>
     <id>dotbrowser</id>
@@ -851,6 +859,7 @@
     <id>eddie.install</id>
     <id>eddie.portable</id>
     <id>eddie</id>
+    <id>edit</id>
     <id>editor-services-command-suite</id>
     <id>editorconfig.core</id>
     <id>editthiscookie-chrome</id>
@@ -1257,6 +1266,7 @@
     <id>handbrake.portable</id>
     <id>handbrake</id>
     <id>handyimagemapper</id>
+    <id>harboor-sweep</id>
     <id>harddriveindicator</id>
     <id>hardentools</id>
     <id>hardware-freak</id>
@@ -1321,6 +1331,7 @@
     <id>hwinfo.portable</id>
     <id>hwinfo32</id>
     <id>hwinfo</id>
+    <id>hwmonitor</id>
     <id>hxd</id>
     <id>hydrus-network</id>
     <id>hyper</id>
@@ -1535,6 +1546,7 @@
     <id>keyferret.portable</id>
     <id>keyferret</id>
     <id>keyfinder</id>
+    <id>keyman</id>
     <id>keys</id>
     <id>keystore-explorer.portable</id>
     <id>khoa.loadouts.dev</id>
@@ -1548,6 +1560,7 @@
     <id>kino.rendezvous</id>
     <id>kitty.portable</id>
     <id>kitty</id>
+    <id>kiwix-desktop</id>
     <id>klatexformula</id>
     <id>klog</id>
     <id>kmttg</id>
@@ -2028,6 +2041,7 @@
     <id>nunit-extension-net60-pluggable-agent</id>
     <id>nunit-extension-net70-pluggable-agent</id>
     <id>nunit-extension-net80-pluggable-agent</id>
+    <id>nunit-extension-net90-pluggable-agent</id>
     <id>nunit-extension-netcore21-pluggable-agent</id>
     <id>nunit-extension-netcore31-pluggable-agent</id>
     <id>nunit-extension-nunit-project-loader</id>
@@ -2175,6 +2189,7 @@
     <id>password-checkup-chrome</id>
     <id>passwordscan</id>
     <id>passwork-chrome</id>
+    <id>pastel</id>
     <id>patchcleaner</id>
     <id>path-copy-copy</id>
     <id>pathed</id>
@@ -2588,6 +2603,9 @@
     <id>scc</id>
     <id>scenebuilder9</id>
     <id>scheduled-shutdown</id>
+    <id>schemaquench-dotnetcore9</id>
+    <id>schemaquench-netfx481</id>
+    <id>schematongs-dotnetcore9</id>
     <id>schematongs-netfx481</id>
     <id>scicoslab</id>
     <id>scidavis</id>
@@ -3303,6 +3321,7 @@
     <id>wc3270</id>
     <id>wcfservice1</id>
     <id>wcfservice</id>
+    <id>wd-dashboard</id>
     <id>weasel-pageant.portable</id>
     <id>weasel</id>
     <id>weasis</id>
@@ -3660,7 +3679,7 @@
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>no</needsToolsDir>
-      <architecture>both</architecture>
+      <architecture>x64</architecture>
       <urlType>1</urlType>
       <argsType>0</argsType>
       <stripQueryString>yes</stripQueryString>
@@ -8189,20 +8208,6 @@
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
     <pkg>
-      <id>dopamine</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
-      <needsStopAction>no</needsStopAction>
-      <needsToolsDir>yes</needsToolsDir>
-      <architecture>x32</architecture>
-      <urlType>6</urlType>
-      <argsType>0</argsType>
-      <DeEncodeSpace>yes</DeEncodeSpace>
-      <removeMSI>yes</removeMSI>
-      <checksumArgsType>7</checksumArgsType>
-      <checksumTypeType>sha256</checksumTypeType>
-      <whyNotInternal>ToDetermine</whyNotInternal>
-    </pkg>
-    <pkg>
       <id>dosbox-x</id>
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
@@ -10288,7 +10293,7 @@
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
       <architecture>both</architecture>
-      <urlType>6</urlType>
+      <urlType>7</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
       <checksumArgsType>5</checksumArgsType>
@@ -12032,19 +12037,6 @@
       <checksumArgsType>5</checksumArgsType>
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
-    </pkg>
-    <pkg>
-      <id>hwmonitor</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
-      <needsStopAction>no</needsStopAction>
-      <needsToolsDir>no</needsToolsDir>
-      <architecture>x32</architecture>
-      <urlType>2</urlType>
-      <argsType>1</argsType>
-      <removeEXE>yes</removeEXE>
-      <checksumArgsType>0</checksumArgsType>
-      <checksumTypeType>sha256</checksumTypeType>
-      <whyNotInternal>licensing</whyNotInternal>
     </pkg>
     <pkg>
       <id>hydrocluster</id>
@@ -16380,11 +16372,14 @@
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
-      <architecture>x64</architecture>
-      <urlType>6</urlType>
+      <architecture>x32</architecture>
+      <urlType>7</urlType>
       <argsType>0</argsType>
       <DeEncodeSpace>yes</DeEncodeSpace>
       <removeEXE>yes</removeEXE>
+      <doubleQuotesUrl>yes</doubleQuotesUrl>
+      <doubleQuotesChecksum>yes</doubleQuotesChecksum>
+      <replaceFilenames>yes</replaceFilenames>
       <checksumArgsType>5</checksumArgsType>
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
@@ -18061,6 +18056,8 @@
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
       <checksumArgsType>5</checksumArgsType>
+      <doubleQuotesChecksum>yes</doubleQuotesChecksum>
+      <doubleQuotesUrl>yes</doubleQuotesUrl>
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
@@ -18851,7 +18848,7 @@
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
-      <architecture>both</architecture>
+      <architecture>x64</architecture>
       <urlType>0</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
@@ -24461,7 +24458,7 @@
       <functionName>Convert-InstallChocolateyPackage</functionName>
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>no</needsToolsDir>
-      <architecture>both</architecture>
+      <architecture>x64</architecture>
       <urlType>6</urlType>
       <argsType>0</argsType>
       <removeEXE>yes</removeEXE>
@@ -24837,19 +24834,6 @@
       <needsStopAction>no</needsStopAction>
       <needsToolsDir>yes</needsToolsDir>
       <whyNotInternal>licensing</whyNotInternal>
-    </pkg>
-    <pkg>
-      <id>wd-dashboard</id>
-      <functionName>Convert-InstallChocolateyPackage</functionName>
-      <needsStopAction>no</needsStopAction>
-      <needsToolsDir>no</needsToolsDir>
-      <architecture>x32</architecture>
-      <urlType>7</urlType>
-      <argsType>0</argsType>
-      <removeEXE>yes</removeEXE>
-      <checksumArgsType>5</checksumArgsType>
-      <checksumTypeType>sha256</checksumTypeType>
-      <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
     <pkg>
       <id>webex</id>
@@ -26262,6 +26246,112 @@
       <checksumTypeType>sha256</checksumTypeType>
       <whyNotInternal>ToDetermine</whyNotInternal>
     </pkg>
+    <pkg>
+      <id>1password8</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>7</urlType>
+      <argsType>0</argsType>
+      <removeMSI>yes</removeMSI>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>ab-download-manager</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x64</architecture>
+      <urlType>9</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>activeexit</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>yes</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>6</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>7</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>admobilize-vision-service</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>6</urlType>
+      <argsType>0</argsType>
+      <removeMSI>yes</removeMSI>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>ampcast</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>7</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <doubleQuotesUrl>yes</doubleQuotesUrl>
+      <doubleQuotesChecksum>yes</doubleQuotesChecksum>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>anchor</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>no</needsToolsDir>
+      <architecture>both</architecture>
+      <urlType>9</urlType>
+      <argsType>0</argsType>
+      <removeMSI>yes</removeMSI>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>anmaniesmp</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>7</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>5</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
+    <pkg>
+      <id>anyvideoconverter</id>
+      <functionName>Convert-InstallChocolateyPackage</functionName>
+      <needsStopAction>no</needsStopAction>
+      <needsToolsDir>yes</needsToolsDir>
+      <architecture>x32</architecture>
+      <urlType>6</urlType>
+      <argsType>0</argsType>
+      <removeEXE>yes</removeEXE>
+      <checksumArgsType>7</checksumArgsType>
+      <checksumTypeType>sha256</checksumTypeType>
+      <whyNotInternal>ToDetermine</whyNotInternal>
+    </pkg>
   </implemented>
   <notImplemented>
     <id>010editor.portable</id>
@@ -26272,7 +26362,6 @@
     <id>1cfresh-client</id>
     <id>1clipboard</id>
     <id>1password-cli</id>
-    <id>1password8</id>
     <id>1password</id>
     <id>2fast</id>
     <id>2gis</id>
@@ -26282,13 +26371,13 @@
     <id>3dsmax</id>
     <id>3proxy</id>
     <id>3rvx</id>
+    <id>404skill-cli</id>
     <id>4t-tray-minimizer</id>
     <id>7kaa</id>
     <id>9kw-client</id>
     <id>aacgain</id>
     <id>aaclr</id>
     <id>ab-download-manager.portable</id>
-    <id>ab-download-manager</id>
     <id>abaclient</id>
     <id>abastart</id>
     <id>abc-update</id>
@@ -26307,7 +26396,6 @@
     <id>acs-engine</id>
     <id>activate-linux</id>
     <id>active-directory-photos</id>
-    <id>activeexit</id>
     <id>activemq</id>
     <id>activeperl-eqemu-x86</id>
     <id>activeperl</id>
@@ -26332,7 +26420,6 @@
     <id>adinsight</id>
     <id>adminservice</id>
     <id>admobilize-malos-vision</id>
-    <id>admobilize-vision-service</id>
     <id>admprovider</id>
     <id>adobeshockwaveplayer</id>
     <id>adom-classic</id>
@@ -26374,6 +26461,7 @@
     <id>algolia</id>
     <id>aliengame</id>
     <id>alire</id>
+    <id>alist</id>
     <id>aliyun-cli</id>
     <id>all-to-mp3</id>
     <id>allow-block-remove-firewall</id>
@@ -26394,18 +26482,15 @@
     <id>amiri</id>
     <id>amongus-extraroles</id>
     <id>amp-winoff.portable</id>
-    <id>ampcast</id>
     <id>ampfontviewer</id>
     <id>amt</id>
     <id>amule.install</id>
     <id>amule.portable</id>
     <id>amulet</id>
     <id>analyzer2go</id>
-    <id>anchor</id>
     <id>android-ndk</id>
     <id>android-sdk</id>
     <id>ankhsvn</id>
-    <id>anmaniesmp</id>
     <id>annie</id>
     <id>anonymouspro</id>
     <id>anote</id>
@@ -26418,7 +26503,6 @@
     <id>anyquery</id>
     <id>anytoiso</id>
     <id>anytype</id>
-    <id>anyvideoconverter</id>
     <id>apache-cassandra</id>
     <id>apache-fop</id>
     <id>apache-netbeans.portable</id>
@@ -26544,6 +26628,8 @@
     <id>azahar.portable</id>
     <id>azahar</id>
     <id>azcopy10</id>
+    <id>azdocli</id>
+    <id>azion</id>
     <id>azpazeta</id>
     <id>azshell</id>
     <id>aztfexport</id>
@@ -26632,6 +26718,7 @@
     <id>biber.portable</id>
     <id>biblioteq</id>
     <id>bibox</id>
+    <id>bicep-docs</id>
     <id>bigbyte</id>
     <id>bigstash</id>
     <id>biicode</id>
@@ -26795,6 +26882,7 @@
     <id>ccleaner.portable</id>
     <id>cctray</id>
     <id>cdinfo.portable</id>
+    <id>cedra</id>
     <id>ceed</id>
     <id>celestia</id>
     <id>cevio</id>
@@ -26960,6 +27048,7 @@
     <id>confd</id>
     <id>confide</id>
     <id>confuser</id>
+    <id>connectra</id>
     <id>connectwise-manage-client</id>
     <id>connexion</id>
     <id>conroe.install</id>
@@ -27228,6 +27317,7 @@
     <id>disksmartview</id>
     <id>diskspd</id>
     <id>diskview</id>
+    <id>dismgui</id>
     <id>dispensense-cli.devops-5</id>
     <id>dispensense-cli</id>
     <id>display-changer</id>
@@ -27235,6 +27325,7 @@
     <id>displaylink</id>
     <id>displaynote</id>
     <id>disposablefixer</id>
+    <id>distroav</id>
     <id>dive</id>
     <id>divvy</id>
     <id>dllexp</id>
@@ -27290,11 +27381,14 @@
     <id>doom4-death-foretold</id>
     <id>doomsday</id>
     <id>doomseeker</id>
+    <id>dopamine2</id>
+    <id>dopamine3</id>
     <id>dopdf</id>
     <id>dorion.portable</id>
     <id>dorion</id>
     <id>doro.install</id>
     <id>dotdocs</id>
+    <id>dotdraw</id>
     <id>dotlocal</id>
     <id>dotmemory-console.portable</id>
     <id>dotmemory-unit.portable</id>
@@ -27344,6 +27438,7 @@
     <id>dsc.networking</id>
     <id>dsc.powershellcommunity</id>
     <id>dsc.webadministration</id>
+    <id>dsc</id>
     <id>dspeech</id>
     <id>dtksneak</id>
     <id>du</id>
@@ -27453,6 +27548,7 @@
     <id>envycoder</id>
     <id>epanet</id>
     <id>epsdevtools.web</id>
+    <id>epson-iprojection</id>
     <id>epson-perfection-v33-scanner</id>
     <id>equality</id>
     <id>equalizerapo</id>
@@ -27469,6 +27565,7 @@
     <id>eset-internet-security</id>
     <id>eset-nod32-antivirus</id>
     <id>esgen</id>
+    <id>espeak-ng</id>
     <id>essence</id>
     <id>ethanbrown.chromecanarydevextensions</id>
     <id>ethanbrown.chromedevextensions</id>
@@ -27505,6 +27602,7 @@
     <id>exfat7z</id>
     <id>exif-purge</id>
     <id>exifdataview</id>
+    <id>exifglass</id>
     <id>exiftool</id>
     <id>exiftoolgui</id>
     <id>explorersuite</id>
@@ -27517,6 +27615,7 @@
     <id>extractnow</id>
     <id>eyeframeconverter</id>
     <id>eyesrelax</id>
+    <id>eza</id>
     <id>ezssh</id>
     <id>f-secureav</id>
     <id>f-secureis</id>
@@ -27656,6 +27755,7 @@
     <id>fjira</id>
     <id>fl2k-win</id>
     <id>flac</id>
+    <id>flakiesadb</id>
     <id>flamegraph</id>
     <id>flare</id>
     <id>flarectl</id>
@@ -27692,6 +27792,7 @@
     <id>focuswriter</id>
     <id>fogapi</id>
     <id>fogg</id>
+    <id>foks</id>
     <id>folder-marker</id>
     <id>folderchangesview</id>
     <id>foldermenu3</id>
@@ -27782,6 +27883,7 @@
     <id>gallio</id>
     <id>galliobundle</id>
     <id>game-key-revealer.portable</id>
+    <id>game-launcher</id>
     <id>gamebooster</id>
     <id>gamedownloader.install</id>
     <id>gamedownloader.portable</id>
@@ -27797,6 +27899,7 @@
     <id>gauntlet</id>
     <id>gax2012</id>
     <id>gb.mongodb</id>
+    <id>gbase64</id>
     <id>gbstudio.install</id>
     <id>gbstudio.portable</id>
     <id>gbt</id>
@@ -27822,7 +27925,14 @@
     <id>geupd4</id>
     <id>geupd</id>
     <id>gfwlive</id>
+    <id>ggu-connect</id>
+    <id>ggu-footing</id>
+    <id>ggu-korfin</id>
+    <id>ggu-seep</id>
+    <id>ggu-slab</id>
     <id>ggu-software-codemeter</id>
+    <id>ggu-stability</id>
+    <id>ggu-stratig</id>
     <id>ghb0t</id>
     <id>ghc</id>
     <id>ghidra</id>
@@ -28014,6 +28124,8 @@
     <id>hasklig</id>
     <id>havdetectiontool</id>
     <id>haxm</id>
+    <id>hayase</id>
+    <id>hayman.portable</id>
     <id>hazelcast</id>
     <id>hbcd</id>
     <id>hcloud.portable</id>
@@ -28024,6 +28136,7 @@
     <id>hdhomerun-view</id>
     <id>hdhomerunviewer-plex</id>
     <id>hdparm</id>
+    <id>hdr-tray</id>
     <id>hdsentinel</id>
     <id>hdtune</id>
     <id>headlamp</id>
@@ -28116,6 +28229,8 @@
     <id>hunspell.portable</id>
     <id>hurl</id>
     <id>hv-ms735-config</id>
+    <id>hwmonitor.install</id>
+    <id>hwmonitor.portable</id>
     <id>hybrid</id>
     <id>hydrairc</id>
     <id>i2pd</id>
@@ -28332,6 +28447,7 @@
     <id>jtrim</id>
     <id>juffed</id>
     <id>juicefs</id>
+    <id>jujutsu.portable</id>
     <id>jumplistsview</id>
     <id>jumpshare</id>
     <id>junction-link-magic</id>
@@ -28466,6 +28582,7 @@
     <id>kog</id>
     <id>kollama</id>
     <id>komorebi</id>
+    <id>koncierge</id>
     <id>kontroll</id>
     <id>kontur-plugin</id>
     <id>kopano-ads-nightly</id>
@@ -28543,6 +28660,7 @@
     <id>lektor</id>
     <id>leonflix</id>
     <id>letsencrypt-win-simple</id>
+    <id>lexmark-universal-driver-pcl-xl</id>
     <id>lftp</id>
     <id>lg-ultragear-control-center</id>
     <id>lgbridge</id>
@@ -28825,6 +28943,7 @@
     <id>miranda</id>
     <id>mirc</id>
     <id>miro</id>
+    <id>miroirs</id>
     <id>mirth-administrator-launcher.install</id>
     <id>mirth-administrator-launcher.portable</id>
     <id>miru</id>
@@ -28847,6 +28966,7 @@
     <id>mobizen</id>
     <id>moboplay</id>
     <id>mod</id>
+    <id>moddy-desktop</id>
     <id>modelio</id>
     <id>modern7z</id>
     <id>moderncsv</id>
@@ -28964,6 +29084,7 @@
     <id>multiplicity</id>
     <id>mupen64plus-qt</id>
     <id>mupen64plus</id>
+    <id>museeks</id>
     <id>musicbee</id>
     <id>musique</id>
     <id>mvc</id>
@@ -29023,6 +29144,7 @@
     <id>ndm</id>
     <id>neat</id>
     <id>neck-diagrams</id>
+    <id>nekot</id>
     <id>nelson</id>
     <id>nem</id>
     <id>neo4j-community</id>
@@ -29573,6 +29695,7 @@
     <id>polaris</id>
     <id>polipo</id>
     <id>poly-lens</id>
+    <id>pomodorot</id>
     <id>pomolectron</id>
     <id>pomotime</id>
     <id>poni</id>
@@ -29640,6 +29763,7 @@
     <id>prepros</id>
     <id>presencelight</id>
     <id>presonusuniversalcontrol</id>
+    <id>pretendo-local-mocks</id>
     <id>prettypaste</id>
     <id>pretzel.scriptcs</id>
     <id>pretzel</id>
@@ -30036,6 +30160,7 @@
     <id>rustdesk.portable</id>
     <id>rustic</id>
     <id>rustrover</id>
+    <id>rustscan</id>
     <id>rustup.install</id>
     <id>rutoken-drivers-removal-tool</id>
     <id>rutoken-drivers</id>
@@ -30068,6 +30193,7 @@
     <id>sandisk-dashboard</id>
     <id>sanerpersonal</id>
     <id>sanetwain</id>
+    <id>sap-btptf</id>
     <id>sapiclient</id>
     <id>sardu</id>
     <id>sass</id>
@@ -30238,6 +30364,7 @@
     <id>sketchupviewer</id>
     <id>skifree</id>
     <id>skillpipereader</id>
+    <id>skipper</id>
     <id>sktimestamp</id>
     <id>skyfonts</id>
     <id>skype-utility-project</id>
@@ -30609,6 +30736,7 @@
     <id>sysmon</id>
     <id>syspin</id>
     <id>system-monitor</id>
+    <id>systeminformer</id>
     <id>systemninja.install</id>
     <id>systemninja.portable</id>
     <id>systraymeter</id>
@@ -30738,6 +30866,7 @@
     <id>tfssidekicks2013</id>
     <id>tfssidekicks2015</id>
     <id>tfssidekicks</id>
+    <id>tgstattools</id>
     <id>thebat</id>
     <id>thebrain.install</id>
     <id>thebrain.portable</id>
@@ -30798,6 +30927,7 @@
     <id>tonelib-gfx</id>
     <id>tonelib-zoom</id>
     <id>toolkit</id>
+    <id>toolora</id>
     <id>topbeat</id>
     <id>topgrade</id>
     <id>tor</id>
@@ -31007,6 +31137,7 @@
     <id>video-repair-software</id>
     <id>videocacheview.portable</id>
     <id>videostream</id>
+    <id>videotoascii</id>
     <id>vidi-dc</id>
     <id>viemu-visualstudio2010</id>
     <id>viemu-visualstudio2012</id>
@@ -31227,6 +31358,7 @@
     <id>vogen</id>
     <id>voicecommands</id>
     <id>voiceflow</id>
+    <id>voicemeet</id>
     <id>volatility3</id>
     <id>volley</id>
     <id>volume2.install</id>
@@ -31489,6 +31621,7 @@
     <id>widelands</id>
     <id>wifiaddcmd</id>
     <id>wifichannelmonitor</id>
+    <id>wifidrop</id>
     <id>wifiinfoview</id>
     <id>wildfly</id>
     <id>wimlib</id>
@@ -31531,6 +31664,7 @@
     <id>windows-adk-winpe</id>
     <id>windows-adk</id>
     <id>windows-app-runtime16</id>
+    <id>windows-app-runtime17</id>
     <id>windows-app-sdk</id>
     <id>windows-iso-downloader</id>
     <id>windows-optimize-debloat</id>
@@ -31719,6 +31853,7 @@
     <id>xhyper-v</id>
     <id>xidel</id>
     <id>xiphqt</id>
+    <id>xmake</id>
     <id>xmind</id>
     <id>xml-copy-editor</id>
     <id>xmlconverter</id>
@@ -31790,7 +31925,9 @@
     <id>zbar</id>
     <id>zeal.portable</id>
     <id>zebar</id>
+    <id>zed-cli-win-unofficial</id>
     <id>zen-browser</id>
+    <id>zenarmor</id>
     <id>zentimings</id>
     <id>zephyr-crosstool-aarch64</id>
     <id>zephyr-crosstool-arc</id>
