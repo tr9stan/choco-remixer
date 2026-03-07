@@ -364,6 +364,7 @@
     <id>cdburnerxp</id>
     <id>cdex</id>
     <id>cdrtfe</id>
+    <id>celq</id>
     <id>cemu</id>
     <id>centipede</id>
     <id>cerebro-es</id>
@@ -444,6 +445,7 @@
     <id>chocolatey-npm.extension</id>
     <id>chocolatey-os-dependency.extension</id>
     <id>chocolatey-preinstaller-checks.extension</id>
+    <id>chocolatey-processor-features.extension</id>
     <id>chocolatey-shim</id>
     <id>chocolatey-toast-notifications.extension</id>
     <id>chocolatey-toast.extension</id>
@@ -532,6 +534,7 @@
     <id>compact-timer</id>
     <id>compactgui</id>
     <id>compactor</id>
+    <id>compactrs</id>
     <id>composer</id>
     <id>config-disablebeep</id>
     <id>configcat</id>
@@ -562,12 +565,14 @@
     <id>core2d.avalonia.direct2d</id>
     <id>core2d.avalonia.skia</id>
     <id>core2d.wpf</id>
+    <id>corebus</id>
     <id>corsixth.install</id>
     <id>corsixth.portable</id>
     <id>corsixth</id>
     <id>countrytraceroute</id>
     <id>coyim</id>
     <id>cpack-shim</id>
+    <id>cpdf</id>
     <id>cpln-k8s-cost-analyzer</id>
     <id>cpu-z</id>
     <id>cpush-shim</id>
@@ -593,6 +598,9 @@
     <id>crystaldiskmark.install</id>
     <id>crystaldiskmark.portable</id>
     <id>crystaldiskmark</id>
+    <id>crystalmark3d25.install</id>
+    <id>crystalmark3d25.portable</id>
+    <id>crystalmark3d25</id>
     <id>crystalmarkretro.install</id>
     <id>crystalmarkretro.portable</id>
     <id>crystalmarkretro</id>
@@ -621,6 +629,7 @@
     <id>d2</id>
     <id>dable</id>
     <id>dankerino</id>
+    <id>darkreader-chrome</id>
     <id>darktable</id>
     <id>dashlane-chrome</id>
     <id>data-lifeguard-diagnostic.portable</id>
@@ -656,8 +665,10 @@
     <id>decoration</id>
     <id>default.template</id>
     <id>delegate</id>
+    <id>dellbiosprovider</id>
     <id>delta</id>
     <id>demo.rest.service</id>
+    <id>depend</id>
     <id>dependency-scanner</id>
     <id>dependency-server2016</id>
     <id>dependency-server2019</id>
@@ -767,6 +778,8 @@
     <id>dotmemory</id>
     <id>dotnet-10.0-sdk</id>
     <id>dotnet-10.0-windowshosting</id>
+    <id>dotnet-11.0-sdk</id>
+    <id>dotnet-11.0-windowshosting</id>
     <id>dotnet-4.6.2</id>
     <id>dotnet-5.0-sdk</id>
     <id>dotnet-5.0-windowshosting</id>
@@ -853,6 +866,7 @@
     <id>duplicati</id>
     <id>dust3d</id>
     <id>dust</id>
+    <id>duvc-cli</id>
     <id>dvdflick-v2</id>
     <id>dxftoqet</id>
     <id>dz-cli</id>
@@ -889,6 +903,9 @@
     <id>element-desktop</id>
     <id>elevate</id>
     <id>elisa</id>
+    <id>elixir-otp-26</id>
+    <id>elixir-otp-27</id>
+    <id>elixir-otp-28</id>
     <id>ellp</id>
     <id>elmer-mpi</id>
     <id>elmer</id>
@@ -1081,6 +1098,7 @@
     <id>gamedownloader</id>
     <id>gamesavemanager</id>
     <id>gamesnostalgia.extension</id>
+    <id>gaphor</id>
     <id>garam-editor</id>
     <id>gawk</id>
     <id>gazel-cli</id>
@@ -1106,6 +1124,7 @@
     <id>gevent</id>
     <id>ggf</id>
     <id>ggshield</id>
+    <id>ggu-all-programs</id>
     <id>gh-api-cli</id>
     <id>gh</id>
     <id>ghostscript.app</id>
@@ -1383,6 +1402,7 @@
     <id>imagemagick.app</id>
     <id>imagemagick.tool</id>
     <id>imagemagick</id>
+    <id>imageviewer</id>
     <id>imagine-full</id>
     <id>imagine</id>
     <id>imdisk-toolkit</id>
@@ -1424,6 +1444,7 @@
     <id>invokebuild</id>
     <id>invokemsbuild</id>
     <id>ioquake3</id>
+    <id>iota</id>
     <id>iperf2</id>
     <id>ipfs-mount</id>
     <id>ipnetinfo.install</id>
@@ -1515,6 +1536,7 @@
     <id>k9s</id>
     <id>kafka-tool</id>
     <id>kamban</id>
+    <id>kanata</id>
     <id>kapp</id>
     <id>kareemsultan.desktop</id>
     <id>kareemsultan.developer.toolkit.dotnet</id>
@@ -1569,6 +1591,7 @@
     <id>kickassvim</id>
     <id>kid3</id>
     <id>kidc</id>
+    <id>kingjamesbible</id>
     <id>kino-leaseprovider-service</id>
     <id>kino-rendezvous-service</id>
     <id>kino.leaseprovider</id>
@@ -1759,7 +1782,9 @@
     <id>mediathekview</id>
     <id>mega-chrome</id>
     <id>mega-edge</id>
+    <id>mega-mario</id>
     <id>megadownloader</id>
+    <id>meilisearch</id>
     <id>meld</id>
     <id>mellowplayer</id>
     <id>memcached</id>
@@ -1830,6 +1855,7 @@
     <id>minimus-regular-font</id>
     <id>minipacman</id>
     <id>minishift</id>
+    <id>mirrord</id>
     <id>mirth-administrator-launcher</id>
     <id>mirth</id>
     <id>mise</id>
@@ -1856,6 +1882,7 @@
     <id>mongodb-cli</id>
     <id>mongodb-shell</id>
     <id>mongodb</id>
+    <id>mongoose</id>
     <id>monitordetails</id>
     <id>monitorinfoview</id>
     <id>monkeyacademy</id>
@@ -1879,6 +1906,7 @@
     <id>mp3infpu</id>
     <id>mp3tag</id>
     <id>mp4v2</id>
+    <id>mp</id>
     <id>mpc-be-nightly</id>
     <id>mpc-be</id>
     <id>mpc-hc-clsid2</id>
@@ -1895,6 +1923,7 @@
     <id>mpvio</id>
     <id>mpw.portable</id>
     <id>mpw</id>
+    <id>mqtt2dmx</id>
     <id>mrboom</id>
     <id>msbuild-sonarqube-runner</id>
     <id>msbuild-structured-log-viewer</id>
@@ -1902,6 +1931,7 @@
     <id>msbuilddumper</id>
     <id>msi.template</id>
     <id>msi2xml</id>
+    <id>msiwrapper</id>
     <id>mspacman</id>
     <id>mspacmannes</id>
     <id>mspass</id>
@@ -1976,7 +2006,6 @@
     <id>newrelic-dotnet</id>
     <id>news-feed-eradicator-for-facebook-chrome</id>
     <id>newt</id>
-    <id>nextcloud-client</id>
     <id>nexus-root-toolkit</id>
     <id>nexusfile</id>
     <id>nexusfont</id>
@@ -2164,6 +2193,7 @@
     <id>opera.next</id>
     <id>optipng</id>
     <id>orangec</id>
+    <id>orb</id>
     <id>orcaslicer.install</id>
     <id>organizeit</id>
     <id>orientdb</id>
@@ -2180,6 +2210,7 @@
     <id>ouiguichocolatey</id>
     <id>owinhost</id>
     <id>owncloud-client</id>
+    <id>oxfmt</id>
     <id>oxlint</id>
     <id>p4merge</id>
     <id>pack</id>
@@ -2280,6 +2311,7 @@
     <id>pinta</id>
     <id>pinwin</id>
     <id>pipes-rs</id>
+    <id>pixelsnatcher</id>
     <id>pixylive-svnc</id>
     <id>pjw.autopackages</id>
     <id>pkcs11admin</id>
@@ -2366,6 +2398,7 @@
     <id>proxallium</id>
     <id>prusaslicer.install</id>
     <id>prusaslicer</id>
+    <id>ps-cli</id>
     <id>psake</id>
     <id>pscodehealth</id>
     <id>psframework</id>
@@ -2459,6 +2492,7 @@
     <id>quick-javascript-switcher-chrome</id>
     <id>quick-lint-js</id>
     <id>quickstart.defaultinstall</id>
+    <id>quickswitch</id>
     <id>quikpak</id>
     <id>quiterss</id>
     <id>quodlibet.install</id>
@@ -2512,6 +2546,7 @@
     <id>reloaded-ii-tools</id>
     <id>rember</id>
     <id>remix-desktop</id>
+    <id>remosd</id>
     <id>remoteapp</id>
     <id>remotelydesktopclient</id>
     <id>remy</id>
@@ -2545,6 +2580,7 @@
     <id>reveye-chrome</id>
     <id>revo-uninstaller</id>
     <id>revo.uninstaller</id>
+    <id>revosd</id>
     <id>rgsupervision</id>
     <id>ricardopignone-sqltools</id>
     <id>riot-web</id>
@@ -2715,6 +2751,7 @@
     <id>sheet-viewer</id>
     <id>shellbagsexplorer</id>
     <id>shellbagsview</id>
+    <id>shelldock</id>
     <id>shelltools</id>
     <id>shexview</id>
     <id>shotcut</id>
@@ -2805,6 +2842,7 @@
     <id>softwarecreations.devset</id>
     <id>sogeti.windowsazure.plugins.endpoint.acl</id>
     <id>solvespace</id>
+    <id>sonar-jmeter</id>
     <id>sonarr</id>
     <id>sopcast</id>
     <id>sortprojectitems</id>
@@ -2941,6 +2979,7 @@
     <id>synctrayzor</id>
     <id>synergy</id>
     <id>synth</id>
+    <id>synthesiser</id>
     <id>sysexp</id>
     <id>systemexplorer</id>
     <id>systemninja</id>
@@ -3035,6 +3074,7 @@
     <id>thegiant.tools</id>
     <id>theholybible</id>
     <id>thematrix</id>
+    <id>thinkpdf</id>
     <id>thonny</id>
     <id>threema-desktop</id>
     <id>thrift</id>
@@ -3070,6 +3110,7 @@
     <id>todotxt.net</id>
     <id>toggl</id>
     <id>tokei</id>
+    <id>tomcat10</id>
     <id>tomcat</id>
     <id>tonelib</id>
     <id>toolsroot</id>
@@ -3194,6 +3235,7 @@
     <id>vassal</id>
     <id>vbackup</id>
     <id>vboxguestadditions.install</id>
+    <id>vcf-powercli-psmodule</id>
     <id>vcredist-all</id>
     <id>vcredist2015</id>
     <id>vcredist2017</id>
@@ -3507,6 +3549,7 @@
     <id>xbmc</id>
     <id>xc</id>
     <id>xdm</id>
+    <id>xenia</id>
     <id>xenserver-backup</id>
     <id>xh</id>
     <id>ximple</id>
@@ -26534,6 +26577,7 @@
     <id>aida64-business</id>
     <id>aida64-extreme.portable</id>
     <id>aida64-networkaudit</id>
+    <id>aircall-workspace</id>
     <id>aircall</id>
     <id>airtest-ide</id>
     <id>ajour</id>
@@ -26563,6 +26607,8 @@
     <id>amazon-appstream-usb</id>
     <id>amazon-appstream</id>
     <id>amazon-ecr-credential-helper</id>
+    <id>amd-cleanup-utility</id>
+    <id>amd-software-adrenalin-edition</id>
     <id>amethyst</id>
     <id>amiduos</id>
     <id>amiri</id>
@@ -26584,11 +26630,13 @@
     <id>anonymouspro</id>
     <id>anote</id>
     <id>ansicon</id>
+    <id>antigravity</id>
     <id>antimicro.portable</id>
     <id>antlr4</id>
     <id>antlrworks2</id>
     <id>anvide-seal-folder</id>
     <id>any2ico.portable</id>
+    <id>anypointstudio</id>
     <id>anyquery</id>
     <id>anytoiso</id>
     <id>anytype</id>
@@ -26620,6 +26668,7 @@
     <id>appvprovider</id>
     <id>apricot</id>
     <id>aqt</id>
+    <id>aquashell</id>
     <id>archi</id>
     <id>archiver</id>
     <id>arduino.portable</id>
@@ -26647,6 +26696,7 @@
     <id>asciidocfx.portable</id>
     <id>asciidoctorj</id>
     <id>ashampoo-antispy</id>
+    <id>ashampoo-app</id>
     <id>asm6f</id>
     <id>asp-net-mvc-boilerplate</id>
     <id>aspeed-graphics-driver</id>
@@ -26738,6 +26788,7 @@
     <id>azuredatastudio-powershell</id>
     <id>azurefunctions-vscode</id>
     <id>azurestorageemulator</id>
+    <id>bab</id>
     <id>babelmap</id>
     <id>babelpad</id>
     <id>babyftp</id>
@@ -26747,6 +26798,9 @@
     <id>bacula</id>
     <id>baidupcs-go</id>
     <id>balsamiqmockups.install</id>
+    <id>bambu-farm-manager-client</id>
+    <id>bambu-farm-manager-server</id>
+    <id>bambuconnect</id>
     <id>banana-buchhaltung</id>
     <id>bandizip</id>
     <id>banks.portable</id>
@@ -26792,6 +26846,7 @@
     <id>beeftext.portable</id>
     <id>beeper-app</id>
     <id>beersmith</id>
+    <id>beetroot</id>
     <id>beets</id>
     <id>belarcadvisor</id>
     <id>bellavista</id>
@@ -26800,6 +26855,7 @@
     <id>bepo</id>
     <id>berrybrew</id>
     <id>betterbird</id>
+    <id>bettertrumpet</id>
     <id>bex</id>
     <id>beyondcompare2</id>
     <id>beyondcompare4</id>
@@ -26929,9 +26985,12 @@
     <id>bun</id>
     <id>bundlerminifier</id>
     <id>bunqdesktop</id>
+    <id>burnintest</id>
     <id>burp-suite-free-edition</id>
     <id>burp-suite-pro-edition</id>
+    <id>busly-cli</id>
     <id>busylight-microsoft-teams</id>
+    <id>butler-cli</id>
     <id>butler</id>
     <id>byteball</id>
     <id>bytecoin</id>
@@ -26971,6 +27030,7 @@
     <id>cavesofqud</id>
     <id>ccache</id>
     <id>cccp</id>
+    <id>ccextractor</id>
     <id>ccleaner.portable</id>
     <id>cctray</id>
     <id>cdinfo.portable</id>
@@ -27013,6 +27073,7 @@
     <id>chocolateyexplorer</id>
     <id>chocomaint</id>
     <id>chocomon</id>
+    <id>choose</id>
     <id>chow-tape-model</id>
     <id>chromaprint</id>
     <id>chromecacheview</id>
@@ -27054,6 +27115,7 @@
     <id>clickpaste</id>
     <id>clickshare-desktop</id>
     <id>clickup-official</id>
+    <id>climate</id>
     <id>clink-maintained</id>
     <id>clink</id>
     <id>clipboard-help-and-spell</id>
@@ -27097,6 +27159,7 @@
     <id>coapp</id>
     <id>cocogitto</id>
     <id>codac</id>
+    <id>code-pathfinder</id>
     <id>codeauditor</id>
     <id>codegpt</id>
     <id>codemaid</id>
@@ -27104,7 +27167,10 @@
     <id>codeproject-ai</id>
     <id>codeql</id>
     <id>coderush-vs2015</id>
+    <id>codeseeker</id>
     <id>codeslice</id>
+    <id>codex</id>
+    <id>coffeemud</id>
     <id>coffeescript</id>
     <id>cold-turkey-blocker</id>
     <id>colemak</id>
@@ -27144,6 +27210,7 @@
     <id>conemu</id>
     <id>confd</id>
     <id>confide</id>
+    <id>confluence-cli</id>
     <id>confuser</id>
     <id>connectra</id>
     <id>connectwise-manage-client</id>
@@ -27194,9 +27261,12 @@
     <id>create-synchronicity.install</id>
     <id>create-synchronicity.portable</id>
     <id>createstructure</id>
+    <id>crewkit</id>
     <id>crip</id>
+    <id>critiq</id>
     <id>croc</id>
     <id>cromite</id>
+    <id>cronos-browser</id>
     <id>cropper</id>
     <id>crossftp</id>
     <id>crowdin-cli</id>
@@ -27382,18 +27452,21 @@
     <id>dexpot</id>
     <id>dfu-util</id>
     <id>dia</id>
+    <id>diagnosis-windows</id>
     <id>dialupass</id>
     <id>dictpw</id>
     <id>diff-pdf</id>
     <id>diffmerge</id>
     <id>difftastic</id>
     <id>diffuse</id>
+    <id>diffusion</id>
     <id>diffutils</id>
     <id>digikam</id>
     <id>digime</id>
     <id>digital</id>
     <id>digsby</id>
     <id>diki</id>
+    <id>dimescheduler-setup</id>
     <id>dingtalk</id>
     <id>dink-smallwood</id>
     <id>dip</id>
@@ -27416,6 +27489,7 @@
     <id>diskspd</id>
     <id>diskview</id>
     <id>dismgui</id>
+    <id>dismtools</id>
     <id>dispensense-cli.devops-5</id>
     <id>dispensense-cli</id>
     <id>display-changer</id>
@@ -27436,6 +27510,7 @@
     <id>dnsquerysniffer</id>
     <id>do-more</id>
     <id>dobi</id>
+    <id>doc-exec</id>
     <id>docash-vega-driver</id>
     <id>docash-vega-firmware</id>
     <id>docbook-bundle</id>
@@ -27452,6 +27527,7 @@
     <id>docker-machine</id>
     <id>doctl</id>
     <id>docto</id>
+    <id>documentationmonster</id>
     <id>dogecoin.install</id>
     <id>dogecoin.portable</id>
     <id>dogtail.azuresdk.2.1.visualstudio2102</id>
@@ -27491,6 +27567,10 @@
     <id>dotlocal</id>
     <id>dotmemory-console.portable</id>
     <id>dotmemory-unit.portable</id>
+    <id>dotnet-11.0-aspnetruntime</id>
+    <id>dotnet-11.0-desktopruntime</id>
+    <id>dotnet-11.0-runtime</id>
+    <id>dotnet-11.0-sdk-1xx</id>
     <id>dotnet-verification-tool</id>
     <id>dotnet4.6-targetpack</id>
     <id>dotnet4.6.1-devpack</id>
@@ -27529,6 +27609,7 @@
     <id>droidcam-obs-plugin</id>
     <id>droidfonts</id>
     <id>droidsansmono</id>
+    <id>drop-compress-image</id>
     <id>dropboxifier</id>
     <id>dropit.install</id>
     <id>dropit.portable</id>
@@ -27561,6 +27642,7 @@
     <id>dvassist</id>
     <id>dvc</id>
     <id>dvdstyler</id>
+    <id>dwag</id>
     <id>dwarf-fortress</id>
     <id>dwgtrueview</id>
     <id>dws.portable</id>
@@ -27571,6 +27653,7 @@
     <id>e-haushaltsbuch</id>
     <id>e-sword</id>
     <id>eagle</id>
+    <id>earningsfeed</id>
     <id>earth-alerts</id>
     <id>easi-gen</id>
     <id>eask-cli</id>
@@ -27592,6 +27675,9 @@
     <id>eclipse-standard-kepler</id>
     <id>eclipse-standard-luna</id>
     <id>ecs-cli</id>
+    <id>edamame-cli</id>
+    <id>edamame-helper</id>
+    <id>edamame-posture</id>
     <id>edecoder</id>
     <id>edgescapenavigator</id>
     <id>edison</id>
@@ -27608,6 +27694,7 @@
     <id>eksctl</id>
     <id>ekz</id>
     <id>elastic</id>
+    <id>elasticsearch-curator</id>
     <id>elasticsearch</id>
     <id>electron-cash.portable</id>
     <id>electron</id>
@@ -27644,6 +27731,7 @@
     <id>ente-auth</id>
     <id>ente-photos</id>
     <id>entityframeworkpowertools-vs2013</id>
+    <id>env2op-cli</id>
     <id>envi</id>
     <id>envycoder</id>
     <id>epanet</id>
@@ -27695,6 +27783,7 @@
     <id>excelconverter</id>
     <id>exceptionless-elasticsearch</id>
     <id>exceptionless</id>
+    <id>exebundle</id>
     <id>execs</id>
     <id>executedprogramslist</id>
     <id>exeinfo</id>
@@ -27715,6 +27804,7 @@
     <id>extensibilitytools</id>
     <id>extractnow</id>
     <id>eyeframeconverter</id>
+    <id>eyerest</id>
     <id>eyesrelax</id>
     <id>eza</id>
     <id>ezssh</id>
@@ -27729,6 +27819,8 @@
     <id>fabfilter-one-x86</id>
     <id>fabfilter-proc2-x64</id>
     <id>fabfilter-proc2-x86</id>
+    <id>fabfilter-proc3-x64</id>
+    <id>fabfilter-proc3-x86</id>
     <id>fabfilter-prods-x64</id>
     <id>fabfilter-prods-x86</id>
     <id>fabfilter-prog-x64</id>
@@ -27802,6 +27894,7 @@
     <id>ffdshow</id>
     <id>ffe</id>
     <id>ffftp.portable</id>
+    <id>ffmpeg-encode</id>
     <id>ffmpeg-shared</id>
     <id>ffsj</id>
     <id>fheroes2enh</id>
@@ -27861,6 +27954,7 @@
     <id>flamegraph</id>
     <id>flare</id>
     <id>flarectl</id>
+    <id>flaresolverr</id>
     <id>flashboot</id>
     <id>flashbuilder.install</id>
     <id>flashcookiesview</id>
@@ -27952,6 +28046,7 @@
     <id>frink</id>
     <id>fritzing</id>
     <id>frogsay</id>
+    <id>front</id>
     <id>frost</id>
     <id>frozenbytes.baseline.dev.core</id>
     <id>frozenbytes.baseline.dev.tools</id>
@@ -27991,6 +28086,7 @@
     <id>gamedownloader.portable</id>
     <id>gamevox</id>
     <id>gamingapp</id>
+    <id>gammalauncher</id>
     <id>ganache</id>
     <id>gardenctl-v2</id>
     <id>gardenlogin</id>
@@ -28017,18 +28113,22 @@
     <id>gedit</id>
     <id>geekbench-ai</id>
     <id>geekuninstaller</id>
+    <id>gemini-cli</id>
     <id>genymotion</id>
     <id>geogebra</id>
     <id>geosetter.portable</id>
     <id>getignore</id>
     <id>getopt</id>
     <id>getter1</id>
+    <id>gettext</id>
     <id>getuserinfo</id>
     <id>geupd4</id>
     <id>geupd</id>
     <id>gfwlive</id>
     <id>ggu-2d-ssflow</id>
     <id>ggu-2d-transient</id>
+    <id>ggu-3d-ssflow</id>
+    <id>ggu-3d-transient</id>
     <id>ggu-atterberg</id>
     <id>ggu-axpile</id>
     <id>ggu-borelog</id>
@@ -28065,6 +28165,7 @@
     <id>ggu-shrinkage</id>
     <id>ggu-sieve</id>
     <id>ggu-slab</id>
+    <id>ggu-slice</id>
     <id>ggu-slope-pile</id>
     <id>ggu-slugtest</id>
     <id>ggu-software-codemeter</id>
@@ -28075,6 +28176,7 @@
     <id>ggu-trench</id>
     <id>ggu-triaxial</id>
     <id>ggu-underpin</id>
+    <id>ggu-uniaxial</id>
     <id>ggu-uplift</id>
     <id>ggu-vibration</id>
     <id>ggu-water</id>
@@ -28098,6 +28200,7 @@
     <id>git-cola</id>
     <id>git-flow-hooks</id>
     <id>git-interactive-rebase-tool</id>
+    <id>git-metrics</id>
     <id>git-status-cache-posh-client</id>
     <id>git-sumi</id>
     <id>git-tf</id>
@@ -28117,9 +28220,11 @@
     <id>gitleaks</id>
     <id>gitob</id>
     <id>gitpad</id>
+    <id>gitresume</id>
     <id>gits</id>
     <id>gitsign</id>
     <id>gittfs</id>
+    <id>gittop</id>
     <id>gittyup</id>
     <id>gitui</id>
     <id>gkcli</id>
@@ -28137,13 +28242,16 @@
     <id>glpi-agent</id>
     <id>glyph-launcher</id>
     <id>glyphexporter</id>
+    <id>gm</id>
     <id>gmac.teamcity</id>
     <id>gmail-growl</id>
+    <id>gmail-ro</id>
     <id>gmailnotifier</id>
     <id>gmer</id>
     <id>gmkvextractgui</id>
     <id>gms</id>
     <id>gmsh</id>
+    <id>gn-text</id>
     <id>gnat-gpl</id>
     <id>gnatsd</id>
     <id>gnokii</id>
@@ -28173,6 +28281,7 @@
     <id>goodbyedpi</id>
     <id>google-chrome-for-enterprise</id>
     <id>google-pinyin</id>
+    <id>google-readonly</id>
     <id>google-web-designer</id>
     <id>google-workspace-sync</id>
     <id>googlechrome-allusers</id>
@@ -28180,8 +28289,10 @@
     <id>googlechrome.dev</id>
     <id>googlejapaneseinput</id>
     <id>googlephotos</id>
+    <id>goose</id>
     <id>gopass-jsonapi</id>
     <id>gopass</id>
+    <id>gopher</id>
     <id>gopro-quik</id>
     <id>goreleaser-testing</id>
     <id>goreleaser</id>
@@ -28201,6 +28312,7 @@
     <id>graalvm</id>
     <id>gradle</id>
     <id>grafana-alloy</id>
+    <id>graftcode-gateway</id>
     <id>grails</id>
     <id>gramblr</id>
     <id>gramps</id>
@@ -28257,6 +28369,7 @@
     <id>hain</id>
     <id>halite</id>
     <id>handle</id>
+    <id>handy</id>
     <id>hardware-identify.portable</id>
     <id>hardwipe</id>
     <id>harmony-sase</id>
@@ -28295,7 +28408,9 @@
     <id>heavyload.portable</id>
     <id>heavyload</id>
     <id>heimdall</id>
+    <id>helium</id>
     <id>helix</id>
+    <id>helm-docs</id>
     <id>helmsman</id>
     <id>help-workshop</id>
     <id>here-label</id>
@@ -28309,6 +28424,7 @@
     <id>hexter.teamcity</id>
     <id>hexter.webserver</id>
     <id>heynote</id>
+    <id>hfit</id>
     <id>hhkbcng</id>
     <id>hibernation-recon</id>
     <id>hidemaru-editor</id>
@@ -28370,6 +28486,7 @@
     <id>httrack.tool</id>
     <id>hub</id>
     <id>hubic</id>
+    <id>hubspot-cli</id>
     <id>hugin.portable</id>
     <id>hulu.desktop</id>
     <id>humble-app</id>
@@ -28380,6 +28497,9 @@
     <id>hwmonitor.portable</id>
     <id>hybrid</id>
     <id>hydrairc</id>
+    <id>hydralauncher</id>
+    <id>hypergraphgo</id>
+    <id>hytale-launcher</id>
     <id>i2pd</id>
     <id>ibex</id>
     <id>iboodhuntchecker-be</id>
@@ -28389,6 +28509,7 @@
     <id>icc-profile-inspector</id>
     <id>icecast</id>
     <id>icedrive</id>
+    <id>icl</id>
     <id>icloud</id>
     <id>iconizer</id>
     <id>iconsext.install</id>
@@ -28483,6 +28604,7 @@
     <id>intellifile</id>
     <id>intellijidea-community</id>
     <id>intellijidea-ultimate</id>
+    <id>intellijidea-unified</id>
     <id>intellitype</id>
     <id>intelpowergadget</id>
     <id>inter</id>
@@ -28521,16 +28643,20 @@
     <id>ipod-support</id>
     <id>ireboot</id>
     <id>ireport</id>
+    <id>iris-cli</id>
     <id>iris</id>
     <id>ironruby</id>
     <id>isapirewrite</id>
     <id>iscommandlineapp</id>
     <id>islc</id>
+    <id>iso2god</id>
     <id>iso7z</id>
     <id>isoplex</id>
     <id>isowriter</id>
     <id>istioctl</id>
     <id>italc</id>
+    <id>itodo</id>
+    <id>its-magic</id>
     <id>iventoy</id>
     <id>ivy</id>
     <id>izarc</id>
@@ -28571,6 +28697,7 @@
     <id>jhipster</id>
     <id>jib</id>
     <id>jing</id>
+    <id>jira-ticket-cli</id>
     <id>jitpad</id>
     <id>jivkok.vsextensions.2013</id>
     <id>jmc</id>
@@ -28602,12 +28729,14 @@
     <id>jumpshare</id>
     <id>junction-link-magic</id>
     <id>junction</id>
+    <id>jvt</id>
     <id>jwcad</id>
     <id>jwpce</id>
     <id>k-litecodecpack-standard</id>
     <id>k-litecodecpackbasic</id>
     <id>k-litecodecpackfull</id>
     <id>k-litecodecpackmega</id>
+    <id>k1s</id>
     <id>k2s</id>
     <id>kadu</id>
     <id>kafka</id>
@@ -28693,6 +28822,7 @@
     <id>keesbaggerman-nutanix-script</id>
     <id>kega-fusion</id>
     <id>kellyelton.devenvironment</id>
+    <id>kellyelton.max.backup</id>
     <id>kellyelton.vsextensions</id>
     <id>kensaku</id>
     <id>kernel-simulator-coreclr</id>
@@ -28717,7 +28847,9 @@
     <id>kindlegen</id>
     <id>kingdraw</id>
     <id>kingsoft-office-free</id>
+    <id>kiro</id>
     <id>kis</id>
+    <id>kite-cli</id>
     <id>kitify</id>
     <id>kkbox</id>
     <id>kkrieger</id>
@@ -28765,6 +28897,7 @@
     <id>kubetail</id>
     <id>kubetui</id>
     <id>kubeval</id>
+    <id>kunobi</id>
     <id>kustomize</id>
     <id>kustoterminal</id>
     <id>kvrt</id>
@@ -28787,6 +28920,7 @@
     <id>lansweeper</id>
     <id>lanxchange</id>
     <id>laravel-herd</id>
+    <id>lasergrbl</id>
     <id>lastactivityview</id>
     <id>lastools</id>
     <id>latexml</id>
@@ -28806,6 +28940,7 @@
     <id>ldc</id>
     <id>ldmdump</id>
     <id>leanify</id>
+    <id>ledger-wallet</id>
     <id>ledger</id>
     <id>leechcraft</id>
     <id>legitest</id>
@@ -28865,6 +29000,8 @@
     <id>linqpad7.portable</id>
     <id>linqpad8.install</id>
     <id>linqpad8.portable</id>
+    <id>linqpad9.install</id>
+    <id>linqpad9.portable</id>
     <id>liquibase-secure</id>
     <id>liquibase</id>
     <id>listary</id>
@@ -28910,6 +29047,7 @@
     <id>logstitcher.portable</id>
     <id>lokalise-cli-2</id>
     <id>loki-logcli</id>
+    <id>loomix</id>
     <id>lossless-audio-checker</id>
     <id>lossless-cut</id>
     <id>love.portable</id>
@@ -28965,6 +29103,7 @@
     <id>malcat</id>
     <id>malimo</id>
     <id>managarr</id>
+    <id>mandelbulber2</id>
     <id>manictime.install</id>
     <id>manictime.portable</id>
     <id>manifest-tool</id>
@@ -29043,7 +29182,10 @@
     <id>memorix</id>
     <id>mental-omega</id>
     <id>mery</id>
+    <id>meshagent</id>
     <id>meshcommander</id>
+    <id>meshexec</id>
+    <id>meshrepair</id>
     <id>meshroom</id>
     <id>meslolg.dz</id>
     <id>messenger</id>
@@ -29057,6 +29199,7 @@
     <id>mfilter</id>
     <id>micloud-link</id>
     <id>micmonitor</id>
+    <id>micro-manager-free</id>
     <id>micro</id>
     <id>micronaut</id>
     <id>microsip-lite</id>
@@ -29067,6 +29210,7 @@
     <id>microsoft-openjdk-21</id>
     <id>microsoft-openjdk11</id>
     <id>microsoft-openjdk17</id>
+    <id>microsoft-openjdk25</id>
     <id>microsoft-openjdk</id>
     <id>microsoft-r-open</id>
     <id>microsoft-sql-server-migration-assistant-for-access</id>
@@ -29109,11 +29253,13 @@
     <id>mkdocs-material</id>
     <id>mkdocs</id>
     <id>mkey</id>
+    <id>mkp224o</id>
     <id>mkshim</id>
     <id>mkv-muxing-batch-gui</id>
     <id>mkvtoolnix.portable</id>
     <id>mls-software-openssh</id>
     <id>mmctl</id>
+    <id>mnemocli</id>
     <id>mob</id>
     <id>mobalivecd</id>
     <id>mobaxterm</id>
@@ -29134,6 +29280,7 @@
     <id>mokka</id>
     <id>moldflowc</id>
     <id>moldy</id>
+    <id>momorph-cli</id>
     <id>monaco</id>
     <id>monday</id>
     <id>monero</id>
@@ -29202,6 +29349,7 @@
     <id>msgraph-cli</id>
     <id>msigna</id>
     <id>msinttypes</id>
+    <id>msiwrapper.install</id>
     <id>msmtp.portable</id>
     <id>msoidcli</id>
     <id>msoledbsql</id>
@@ -29236,6 +29384,7 @@
     <id>multibit</id>
     <id>multibrowse</id>
     <id>multiclip</id>
+    <id>multidrive</id>
     <id>multihasher</id>
     <id>multilingualapptoolkit</id>
     <id>multiplicity</id>
@@ -29303,6 +29452,7 @@
     <id>neat</id>
     <id>nebula</id>
     <id>neck-diagrams</id>
+    <id>nekobox</id>
     <id>nekot</id>
     <id>nelson</id>
     <id>nem</id>
@@ -29393,6 +29543,7 @@
     <id>netcfpowertoys</id>
     <id>netcfsvcutil</id>
     <id>netconnectchoose</id>
+    <id>netdiag</id>
     <id>netextender</id>
     <id>netfx-4.0.1-devpack</id>
     <id>netfx-4.0.2-devpack</id>
@@ -29491,6 +29642,7 @@
     <id>npmtaskrunner</id>
     <id>npppluginmanager</id>
     <id>nrf-sdk</id>
+    <id>nrq-cli</id>
     <id>nsbuilder.install</id>
     <id>nsbuilder.portable</id>
     <id>nscp</id>
@@ -29600,6 +29752,7 @@
     <id>openboard</id>
     <id>openbve</id>
     <id>openchrom</id>
+    <id>opencode-desktop</id>
     <id>opencode</id>
     <id>opencodecs</id>
     <id>opencomic.portable</id>
@@ -29651,6 +29804,7 @@
     <id>operapassview</id>
     <id>opkssh</id>
     <id>opos-cco</id>
+    <id>opstrail</id>
     <id>opsview-agent-x32</id>
     <id>opswatsecurityscore</id>
     <id>opus-tools</id>
@@ -29706,6 +29860,7 @@
     <id>pandabank.portable</id>
     <id>pandafreeantivirus</id>
     <id>pandoc-crossref</id>
+    <id>pangolin</id>
     <id>pangolinquickshow</id>
     <id>papyrus</id>
     <id>paquet-builder</id>
@@ -29770,6 +29925,7 @@
     <id>pdfxchangeeditor</id>
     <id>pdfxchangelite</id>
     <id>pdk</id>
+    <id>pdp-cli-test</id>
     <id>pe-client-tools</id>
     <id>peach</id>
     <id>peazip.portable</id>
@@ -29824,12 +29980,14 @@
     <id>pime</id>
     <id>pinginfoview</id>
     <id>pingo</id>
+    <id>pingometer</id>
     <id>pipelist</id>
     <id>piratebrowser</id>
     <id>pitchfunk</id>
     <id>pix</id>
     <id>pixelorama</id>
     <id>pixelshop</id>
+    <id>pixi</id>
     <id>pixie</id>
     <id>pixivutil2</id>
     <id>pkgconfiglite</id>
@@ -29860,6 +30018,7 @@
     <id>pokerth</id>
     <id>polaris</id>
     <id>polipo</id>
+    <id>poly-lens-desktop</id>
     <id>poly-lens</id>
     <id>pomodorot</id>
     <id>pomolectron</id>
@@ -29872,6 +30031,7 @@
     <id>portexpert</id>
     <id>portfolio</id>
     <id>portmon</id>
+    <id>portopen</id>
     <id>portqry</id>
     <id>portscan.portable</id>
     <id>portx</id>
@@ -29966,11 +30126,13 @@
     <id>project64</id>
     <id>projectlibre.portable</id>
     <id>projecttaskrunner</id>
+    <id>projwarp</id>
     <id>prometheus-blackbox-exporter</id>
     <id>prometheus-grok-exporter</id>
     <id>prometheus-sql-exporter</id>
     <id>prometheus-windows-exporter.install</id>
     <id>prometheus</id>
+    <id>promptext</id>
     <id>pronterface</id>
     <id>protonauth</id>
     <id>protonmail</id>
@@ -29994,6 +30156,7 @@
     <id>pslist</id>
     <id>psloggedon</id>
     <id>psloglist</id>
+    <id>psmux</id>
     <id>pspad.portable</id>
     <id>pspasswd</id>
     <id>psping</id>
@@ -30010,6 +30173,7 @@
     <id>pt</id>
     <id>ptime</id>
     <id>ptimer</id>
+    <id>ptx</id>
     <id>publicdns</id>
     <id>pull-watch</id>
     <id>pulse</id>
@@ -30057,6 +30221,7 @@
     <id>qc-doom-edition</id>
     <id>qemu-guest-agent</id>
     <id>qemu-img</id>
+    <id>qemu-virtio-driver</id>
     <id>qgis-ltr</id>
     <id>qip2012</id>
     <id>qlcplus</id>
@@ -30126,11 +30291,13 @@
     <id>raccine</id>
     <id>racket</id>
     <id>radare2</id>
+    <id>raddebugger</id>
     <id>radmin-viewer.portable</id>
     <id>raidar</id>
     <id>raidcall</id>
     <id>railroadtycoon</id>
     <id>railwayopsim</id>
+    <id>rainfrog</id>
     <id>ralibretro</id>
     <id>rammap</id>
     <id>ramme</id>
@@ -30157,6 +30324,7 @@
     <id>rcforb</id>
     <id>rckskimmer</id>
     <id>rclone-beta</id>
+    <id>rclone-manager</id>
     <id>rclone-ui</id>
     <id>rclonebrowser</id>
     <id>rclonetray</id>
@@ -30247,6 +30415,7 @@
     <id>repulicanywhere</id>
     <id>reqchecker</id>
     <id>reqrypt.portable</id>
+    <id>requestly</id>
     <id>resedit</id>
     <id>reset-windows-update-tool</id>
     <id>reshack.portable</id>
@@ -30332,6 +30501,7 @@
     <id>rustdesk.install</id>
     <id>rustdesk.portable</id>
     <id>rustic</id>
+    <id>rustnet</id>
     <id>rustrover</id>
     <id>rustscan</id>
     <id>rustup.install</id>
@@ -30353,6 +30523,7 @@
     <id>sagethumbs</id>
     <id>sakuraeditor</id>
     <id>salamander</id>
+    <id>salesforce-cli</id>
     <id>salome</id>
     <id>salt-minion</id>
     <id>saltminion</id>
@@ -30439,6 +30610,7 @@
     <id>sendmessage</id>
     <id>sendtokindle</id>
     <id>sentry-cli</id>
+    <id>sepand</id>
     <id>sepavi</id>
     <id>seppdf</id>
     <id>seq</id>
@@ -30450,6 +30622,7 @@
     <id>server-jre10</id>
     <id>server-jre8</id>
     <id>server-jre9</id>
+    <id>service-bus-tui</id>
     <id>servicebusmqmanager</id>
     <id>servicecontrol</id>
     <id>serviceinsight</id>
@@ -30479,6 +30652,7 @@
     <id>sharepointdesigner2010x64</id>
     <id>sharepointdesigner2013x32</id>
     <id>sharepointdesigner2013x64</id>
+    <id>sharex-hdr</id>
     <id>sharpcaster</id>
     <id>sharpdevelop</id>
     <id>sharpkeys.portable</id>
@@ -30511,6 +30685,7 @@
     <id>signal.portable</id>
     <id>signcode.install</id>
     <id>sil</id>
+    <id>silence</id>
     <id>silverlight3sdk</id>
     <id>silverlight4sdk</id>
     <id>silverlight5developerruntime</id>
@@ -30530,6 +30705,7 @@
     <id>sing-box</id>
     <id>singleinstance</id>
     <id>sipfw</id>
+    <id>sipmudclient</id>
     <id>site24x7-apminsight-dotnet</id>
     <id>sitecore-courier</id>
     <id>sitecoreshipfunctions</id>
@@ -30547,6 +30723,7 @@
     <id>skypeforbusiness</id>
     <id>skypeforbusinessbasic</id>
     <id>skypelogview</id>
+    <id>slack-chat-api</id>
     <id>slade</id>
     <id>sleeponlan</id>
     <id>sleuthkit</id>
@@ -30555,6 +30732,7 @@
     <id>slidy</id>
     <id>slik.svn</id>
     <id>slpolicy</id>
+    <id>slskdn</id>
     <id>smart-console-utility</id>
     <id>smart7z</id>
     <id>smartcontextmenu</id>
@@ -30653,6 +30831,7 @@
     <id>spacesniffer</id>
     <id>spacious-start-menu</id>
     <id>spark</id>
+    <id>sparkle</id>
     <id>spatial</id>
     <id>spawner</id>
     <id>spcomp</id>
@@ -30704,6 +30883,8 @@
     <id>sql-server-2019</id>
     <id>sql-server-2022-cumulative-update</id>
     <id>sql-server-2022</id>
+    <id>sql-server-2025-cumulative-update</id>
+    <id>sql-server-2025</id>
     <id>sql-server-express-adv</id>
     <id>sql-workbench</id>
     <id>sql2008.clrtypes</id>
@@ -30783,6 +30964,7 @@
     <id>ssdt15</id>
     <id>ssdt17</id>
     <id>ssdtbi.vs2012</id>
+    <id>ssh-x-term</id>
     <id>ssip.portable</id>
     <id>ssis-multiple-hash</id>
     <id>ssis-vs2019</id>
@@ -30794,11 +30976,13 @@
     <id>stack</id>
     <id>stakecubecoinwallet-bootstrap</id>
     <id>stakecubecoinwallet</id>
+    <id>stalker-gamma</id>
     <id>standalone-ssis-devops-tools</id>
     <id>standalone-windows-stig</id>
     <id>stardock-fences</id>
     <id>stardock-multiplicity</id>
     <id>starleaf</id>
+    <id>starsearch</id>
     <id>starship.install</id>
     <id>starship.portable</id>
     <id>start11</id>
@@ -30945,6 +31129,7 @@
     <id>tb-vol-scroll</id>
     <id>tbb</id>
     <id>tbox</id>
+    <id>tc</id>
     <id>tcp-cloud</id>
     <id>tcp-copytree</id>
     <id>tcp-csvview</id>
@@ -31002,7 +31187,9 @@
     <id>tenv</id>
     <id>terapad</id>
     <id>terasology</id>
+    <id>teraterm5</id>
     <id>terminals.app</id>
+    <id>termix-ssh</id>
     <id>termscp</id>
     <id>terracreds</id>
     <id>terraform-docs</id>
@@ -31053,8 +31240,10 @@
     <id>themekit</id>
     <id>therion</id>
     <id>thor.generator</id>
+    <id>thorium-reader</id>
     <id>thorium</id>
     <id>thoughtworks.go.server</id>
+    <id>threema-app</id>
     <id>thumbnail-database-viewer</id>
     <id>thumbs7z</id>
     <id>thumbsremover</id>
@@ -31074,6 +31263,7 @@
     <id>time4popcorn</id>
     <id>timeit</id>
     <id>timemem</id>
+    <id>timeshit</id>
     <id>timestamp</id>
     <id>timetravel</id>
     <id>timetravelcli</id>
@@ -31111,6 +31301,7 @@
     <id>topgrade</id>
     <id>tor</id>
     <id>torchat</id>
+    <id>torrent-vpn-stack</id>
     <id>tortoisehg</id>
     <id>tortoisemerge</id>
     <id>tosca</id>
@@ -31164,6 +31355,7 @@
     <id>tumblthree</id>
     <id>tuneuputilities</id>
     <id>tunsafe</id>
+    <id>tupitube</id>
     <id>turbo</id>
     <id>turnedontimesview</id>
     <id>turnflash</id>
@@ -31190,6 +31382,12 @@
     <id>ubooquity</id>
     <id>ubuntuhere</id>
     <id>uc</id>
+    <id>ucichess-engine-lc0-nvidia</id>
+    <id>ucichess-engine-obsidian</id>
+    <id>ucichess-engine-plentychess</id>
+    <id>ucichess-engine-reckless</id>
+    <id>ucichess-nibbler</id>
+    <id>ucichess-pawnappetit</id>
     <id>ucma4</id>
     <id>ucon64</id>
     <id>ucon</id>
@@ -31228,6 +31426,7 @@
     <id>unicreds</id>
     <id>uniextract.install</id>
     <id>uniextract.portable</id>
+    <id>unifi-identity</id>
     <id>unifiedremote</id>
     <id>unifying-fut</id>
     <id>unihex</id>
@@ -31277,6 +31476,7 @@
     <id>vagrant-winrm-config</id>
     <id>vagrant_plugins</id>
     <id>vale</id>
+    <id>valvefm</id>
     <id>vault</id>
     <id>vazir-code-font</id>
     <id>vazir-font</id>
@@ -31289,6 +31489,7 @@
     <id>vcexpress2010</id>
     <id>vcf-cli</id>
     <id>vclip</id>
+    <id>vdot</id>
     <id>veeam-agent</id>
     <id>veeam-backup-and-replication-extract</id>
     <id>veeam-backup-and-replication-iso</id>
@@ -31533,28 +31734,44 @@
     <id>visualstudio2026-preview-workload-vctools</id>
     <id>visualstudio2026-preview-workload-visualstudioextension</id>
     <id>visualstudio2026-preview-workload-webbuildtools</id>
+    <id>visualstudio2026-remotetools</id>
     <id>visualstudio2026-workload-azure</id>
+    <id>visualstudio2026-workload-azurebuildtools</id>
     <id>visualstudio2026-workload-data</id>
+    <id>visualstudio2026-workload-databuildtools</id>
     <id>visualstudio2026-workload-datascience</id>
+    <id>visualstudio2026-workload-linuxbuildtools</id>
+    <id>visualstudio2026-workload-manageddesktop</id>
+    <id>visualstudio2026-workload-manageddesktopbuildtools</id>
     <id>visualstudio2026-workload-managedgame</id>
     <id>visualstudio2026-workload-nativecrossplat</id>
     <id>visualstudio2026-workload-nativedesktop</id>
     <id>visualstudio2026-workload-nativegame</id>
     <id>visualstudio2026-workload-nativemobile</id>
     <id>visualstudio2026-workload-netcrossplat</id>
+    <id>visualstudio2026-workload-netcrossplatbuildtools</id>
     <id>visualstudio2026-workload-netweb</id>
     <id>visualstudio2026-workload-node</id>
+    <id>visualstudio2026-workload-nodebuildtools</id>
     <id>visualstudio2026-workload-office</id>
+    <id>visualstudio2026-workload-officebuildtools</id>
     <id>visualstudio2026-workload-python</id>
     <id>visualstudio2026-workload-universal</id>
+    <id>visualstudio2026-workload-universalbuildtools</id>
+    <id>visualstudio2026-workload-vctools</id>
     <id>visualstudio2026-workload-visualstudioextension</id>
+    <id>visualstudio2026-workload-visualstudioextensionbuildtools</id>
+    <id>visualstudio2026-workload-webbuildtools</id>
     <id>visualstudio2026buildtools-preview</id>
     <id>visualstudio2026buildtools</id>
     <id>visualstudio2026community-preview</id>
+    <id>visualstudio2026community</id>
     <id>visualstudio2026enterprise-preview</id>
     <id>visualstudio2026enterprise</id>
     <id>visualstudio2026professional-preview</id>
+    <id>visualstudio2026professional</id>
     <id>visualstudio2026teamexplorer-preview</id>
+    <id>visualstudio2026teamexplorer</id>
     <id>visualstudiocode-insiders</id>
     <id>visualstudiocodeinsiders</id>
     <id>visualstudiocommunity2013</id>
@@ -31593,6 +31810,7 @@
     <id>volume2.install</id>
     <id>volume2.portable</id>
     <id>volumeid</id>
+    <id>volumescroller</id>
     <id>volumouse.install</id>
     <id>volumouse.portable</id>
     <id>voobly</id>
@@ -31833,6 +32051,7 @@
     <id>westwindhtmlhelpbuilder</id>
     <id>westwindwebmonitor</id>
     <id>westwindwebsurge</id>
+    <id>westwood.install</id>
     <id>wfilecheck</id>
     <id>whatinstartup</id>
     <id>whatishang</id>
@@ -31852,6 +32071,7 @@
     <id>wifichannelmonitor</id>
     <id>wifidrop</id>
     <id>wifiinfoview</id>
+    <id>wifui</id>
     <id>wildfly</id>
     <id>wimlib</id>
     <id>win-gpg-agent</id>
@@ -31992,6 +32212,7 @@
     <id>wiresockvpngateway</id>
     <id>wisemo</id>
     <id>wit</id>
+    <id>witr</id>
     <id>witsy</id>
     <id>wix35</id>
     <id>wixedit</id>
@@ -32088,6 +32309,8 @@
     <id>xmind</id>
     <id>xml-copy-editor</id>
     <id>xml2rfc</id>
+    <id>xmlblueprint-archive</id>
+    <id>xmlblueprint</id>
     <id>xmlconverter</id>
     <id>xmlexplorer</id>
     <id>xmlstarlet.portable</id>
@@ -32136,6 +32359,7 @@
     <id>yed-nojre</id>
     <id>yed</id>
     <id>yinxiangbiji</id>
+    <id>yisangsay</id>
     <id>yixee</id>
     <id>ynote</id>
     <id>yo</id>
@@ -32158,6 +32382,8 @@
     <id>zeal.portable</id>
     <id>zebar</id>
     <id>zed-cli-win-unofficial</id>
+    <id>zed</id>
+    <id>zelph</id>
     <id>zen-browser</id>
     <id>zenarmor</id>
     <id>zentimings</id>
