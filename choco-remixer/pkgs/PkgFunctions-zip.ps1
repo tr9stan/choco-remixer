@@ -669,3 +669,42 @@ Function Convert-autocad ([PackageInternalizeInfo]$obj) {
 
     Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum32
 }
+
+Function Convert-deno ([PackageInternalizeInfo]$obj) {
+    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '^\$url64 ').tostring()
+    $url64 = ($fullurl64 -split "'" | Select-String -Pattern "http").ToString()
+    $filename64 = ($url64 -split "/" | Select-Object -Last 1).tostring()
+    $filePath64 = '$file64         = (Join-Path $toolsDir "' + $filename64 + '")'
+
+    $obj.installScriptMod = $filePath64 + "`n" + $obj.InstallScriptMod
+    $obj.installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $obj.InstallScriptMod
+    $obj.installScriptMod = $obj.installScriptMod -replace "Install-ChocolateyZipPackage" , "<#Install-ChocolateyZipPackage"
+    $obj.installScriptMod = $obj.installScriptMod -replace ' \$checksumType64' , "$& #>`nGet-ChocolateyUnzip -FileFullPath64 `$file64 -Destination `$UnzipLocation -PackageName `$packagename"
+
+    $checksum64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '^\$checksum64 ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+
+    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url64 -filename $filename64 -folder $obj.toolsDir -checksum $checksum64 -checksumTypeType 'sha512'
+}
+
+
+Function Convert-amdryzenchipset ([PackageInternalizeInfo]$obj) {
+    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\s\$url\s+=').tostring()
+    $url32 = ($fullurl32 -split "'" | Select-String -Pattern "http").tostring()
+    $filename32 = "AMD_Chipset_Software.exe"
+    $isZip = $url32.EndsWith('.zip')
+    if ($isZip) {
+        $filename32 = "amd_chipset_drivers.zip"
+    }
+
+    $obj.installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $obj.InstallScriptMod
+    $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.zip'
+    $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.exe'
+    $obj.installScriptMod = $obj.installScriptMod -replace "Get-ChocolateyWebFile", "#$&"
+
+    $accept = '*/*'
+    $referer = 'https://www.amd.com/en/support/chipsets/amd-socket-am4/a320'
+
+    $checksum32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\s\$checksum\s+=').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+
+    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum32 -acceptMIME $accept -referer $referer
+}
