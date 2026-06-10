@@ -8,15 +8,6 @@
     <id>zoom</id>
     <id>firefox</id>
     <id>nexus-repository</id>
-    <id>python3</id>
     <id>rsat</id>
-    <id>vcredist2005</id>
-    <id>vcredist2008</id>
-    <id>vcredist2010</id>
-    <id>vcredist2012</id>
-    <id>vcredist2013</id>
-    <id>vcredist2015</id>
-    <id>vcredist2017</id>
-    <id>vcredist140</id>
     <id>vmware-tools</id>
 </toInternalize>
