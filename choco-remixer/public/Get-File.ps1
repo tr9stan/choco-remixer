@@ -8,20 +8,24 @@
         [string]$checksumTypeType,
         [string]$referer,
         [string]$acceptMIME,
-        [string]$authorization
+        [string]$authorization,
+        [string]$userAgent
     )
 
-    $folder = (Resolve-Path $folder).Path
+    #filename comes from untrusted install scripts, make sure it cannot escape the folder
+    Assert-SafeFileName -FileName $filename
+
+    $folder = (Resolve-Path -LiteralPath $folder).Path
 
     $dlwdFile = (Join-Path "$folder" "$filename")
 
-    if (Test-Path $dlwdFile) {
+    if (Test-Path -LiteralPath $dlwdFile) {
         if ($checksum) {
             Write-Information "$dlwdFile appears to be downloaded, checking checksum" -InformationAction Continue
             $oldFileOK = Confirm-Checksum -fullFilePath $dlwdFile -checksum $checksum -checksumTypeType $checksumTypeType
         } else {
             Write-Warning "$dlwdFile appears to be downloaded, but no checksum available, so deleting"
-            Remove-Item -Force -Path $dlwdFile
+            Remove-Item -Force -LiteralPath $dlwdFile
             $oldFileOK = $false
         }
     } else {
@@ -35,7 +39,13 @@
         #needed to use [Microsoft.PowerShell.Commands.PSUserAgent] when running in pwsh
         Import-Module Microsoft.PowerShell.Utility
         $dlwd = New-Object net.webclient
-        $dlwd.Headers.Add('user-agent', [Microsoft.PowerShell.Commands.PSUserAgent]::firefox)
+        #Some download hosts (e.g. tableau, sourceforge) block the default firefox user agent,
+        #so allow a custom one to be set from the package config
+        if ($userAgent) {
+            $dlwd.Headers.Add('user-agent', $userAgent)
+        } else {
+            $dlwd.Headers.Add('user-agent', [Microsoft.PowerShell.Commands.PSUserAgent]::firefox)
+        }
         if ($referer) {
             $dlwd.Headers.Add('referer', $referer)
         }
@@ -51,6 +61,8 @@
             $dlwd.DownloadFile($url, $dlwdFile)
         } catch {
             Write-Warning "Url Failed to download: $url"
+            #Do not leave a partial download behind
+            Remove-Item -Force -EA 0 -LiteralPath $dlwdFile
             throw $_
         } finally {
             $dlwd.dispose()

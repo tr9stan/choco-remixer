@@ -20,6 +20,7 @@ Function Edit-InstallChocolateyPackage {
         [switch]$doubleQuotesUrl,
         [switch]$doubleQuotesChecksum,
         [switch]$replaceFilenames,
+        [string]$userAgent,
         [parameter(Mandatory = $true)]
         [ValidateSet('md5', 'sha1', 'sha256', 'sha512')]
         [string]$checksumTypeType,
@@ -130,8 +131,17 @@ Function Edit-InstallChocolateyPackage {
             }
             Break
         }
+        10 {
+            if ($x32) {
+                $fullurl32 = ($installScript -split "`n" | Select-String -Pattern '^\$url\s+=').tostring()
+            }
+            if ($x64) {
+                $fullurl64 = ($installScript -split "`n" | Select-String -Pattern '^\$url\s+=').tostring()
+            }
+            Break
+        }
         Default {
-            Write-Error "could not find url type"
+            Throw "could not find url type"
         }
     }
 
@@ -186,8 +196,17 @@ Function Edit-InstallChocolateyPackage {
                 }
                 Break
             }
+            3 {
+                if ($x32) {
+                    $url32 = $url32 -replace '\$Version',$version
+                }
+                if ($x64) {
+                    $url64 = $url64 -replace '\$Version',$version
+                }
+                Break
+            }
             Default {
-                Write-Error "could not find version URL type"
+                Throw "could not find version URL type"
             }
         }
     }
@@ -229,7 +248,7 @@ Function Edit-InstallChocolateyPackage {
         } elseif ($removeMSU) {
             $fileType = 'msu'
         } else {
-            Write-Error "No remove file type specified, this is required when replaceFilenames is specified"
+            Throw "No remove file type specified, this is required when replaceFilenames is specified"
         }
 
         if ($x32) {
@@ -238,6 +257,15 @@ Function Edit-InstallChocolateyPackage {
         if ($x64) {
             $filename64 = "$nuspecID-$version-x64.$fileType"
         }
+    }
+
+    #File names come from URLs in the untrusted install script and are spliced into
+    #the generated script below, so they must be validated before use
+    if ($x32) {
+        Assert-SafeFileName -FileName $filename32
+    }
+    if ($x64) {
+        Assert-SafeFileName -FileName $filename64
     }
 
 
@@ -266,7 +294,7 @@ Function Edit-InstallChocolateyPackage {
             $installScriptMod = $installScriptMod -replace " = @{" , "$&`n    $filePath32`n    $filePath64"
         }
     } else {
-        Write-Error "could not find args type"
+        Throw "could not find args type"
     }
 
 
@@ -316,7 +344,7 @@ Function Edit-InstallChocolateyPackage {
             } else {
                 Throw "Invalid checksumArgsType $checksumArgsType"
             }
-            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url32 -filename $filename32 -folder $toolsDir -checksum $checksum32 -checksumTypeType $checksumTypeType
+            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url32 -filename $filename32 -folder $toolsDir -checksum $checksum32 -checksumTypeType $checksumTypeType -userAgent $userAgent
         }
         if ($x64) {
             if ($checksumArgsType -eq 0) {
@@ -338,14 +366,14 @@ Function Edit-InstallChocolateyPackage {
             } else {
                 Throw "Invalid checksumArgsType $checksumArgsType"
             }
-            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url64 -filename $filename64 -folder $toolsDir -checksum $checksum64 -checksumTypeType $checksumTypeType
+            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url64 -filename $filename64 -folder $toolsDir -checksum $checksum64 -checksumTypeType $checksumTypeType -userAgent $userAgent
         }
     } else {
         if ($x32) {
-            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url32 -filename $filename32 -folder $toolsDir
+            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url32 -filename $filename32 -folder $toolsDir -userAgent $userAgent
         }
         if ($x64) {
-            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url64 -filename $filename64 -folder $toolsDir
+            Get-FileWithCache -PackageID $nuspecID -PackageVersion $version -url $url64 -filename $filename64 -folder $toolsDir -userAgent $userAgent
         }
     }
 

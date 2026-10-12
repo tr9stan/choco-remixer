@@ -1,4 +1,27 @@
-﻿Function Get-RemixerConfig {
+﻿Function Get-RemixerConfigFingerprint {
+    <#
+    .SYNOPSIS
+    Builds a fingerprint from the XML-path parameters of a caller.
+
+    .DESCRIPTION
+    Used together with the $configLoadFingerprint sentinel set by Get-RemixerConfig
+    so dot-sourcing callers can skip reloading config when the same inputs are
+    used, and reload when they change. Only keys shared by all callers are used;
+    internalizedXML is excluded because Invoke-InternalizeChocoPkg synthesizes
+    that parameter for the callee.
+    #>
+    param($BoundParameters)
+
+    $fingerprint = ''
+    foreach ($key in 'configXML', 'repoCheckXML', 'folderXML') {
+        if ($BoundParameters.ContainsKey($key)) {
+            $fingerprint = $fingerprint + "$key=$($BoundParameters[$key])|"
+        }
+    }
+    return $fingerprint
+}
+
+Function Get-RemixerConfig {
     [CmdletBinding()]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseDeclaredVarsMoreThanAssignments', '', Justification = 'This is dotsourced')]
     Param(
@@ -14,6 +37,11 @@
     if ($null -eq [Environment]::GetEnvironmentVariable("ChocolateyInstall")) {
         Write-Error "Did not find ChocolateyInstall environment variable, please make sure it exists"
         Throw
+    }
+
+    #Raise the TLS floor on .NET Framework so downloads to modern HTTPS endpoints work
+    if ($PSVersionTable.PSVersion.Major -lt 6) {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
     }
 
     #Check OS to select user profile location
@@ -88,7 +116,7 @@
         }
     }
 
-    if ($upperFunctionBoundParameters['downloadXML']) {
+    if ($upperFunctionBoundParameters.ContainsKey('downloadXML')) {
         $downloadXML = (Resolve-Path $downloadXML).path
     } elseif ($upperFunctionBoundParameters['folderxml']) {
         $downloadXML = Join-Path $folderXML 'download.xml'
@@ -160,19 +188,36 @@
     }
 
 
-    if (!(Test-Path $config.searchDir)) {
+    if ([string]::IsNullOrWhiteSpace($config.searchDir) -or !(Test-Path -LiteralPath $config.searchDir -PathType Container)) {
         Throw "$($config.searchDir) not found, please specify valid searchDir"
     }
-    if (!(Test-Path $config.workDir)) {
+    if ([string]::IsNullOrWhiteSpace($config.workDir) -or !(Test-Path -LiteralPath $config.workDir -PathType Container)) {
         Throw "$($config.workDir) not found, please specify valid workDir"
     }
-    if ($config.workDir.ToLower().StartsWith($config.searchDir.ToLower())) {
+
+    #Make sure paths are full paths before comparing them, so relative paths,
+    #'..' segments and mixed separators cannot get around the overlap checks
+    $config.searchDir = (Resolve-Path -LiteralPath $config.searchDir).ProviderPath
+    $config.workDir = (Resolve-Path -LiteralPath $config.workDir).ProviderPath
+
+    $pathComparison = [System.StringComparison]::Ordinal
+    if ($IsWindows -or $PSVersionTable.PSVersion.Major -lt 6) {
+        $pathComparison = [System.StringComparison]::OrdinalIgnoreCase
+    }
+    $separator = [IO.Path]::DirectorySeparatorChar
+    $normalizedSearchDir = [IO.Path]::GetFullPath($config.searchDir).TrimEnd($separator, [IO.Path]::AltDirectorySeparatorChar)
+    $normalizedWorkDir = [IO.Path]::GetFullPath($config.workDir).TrimEnd($separator, [IO.Path]::AltDirectorySeparatorChar)
+    if ($normalizedWorkDir.Equals($normalizedSearchDir, $pathComparison)) {
+        Throw "workDir cannot be the same as the searchDir"
+    }
+    if ($normalizedWorkDir.StartsWith($normalizedSearchDir + $separator, $pathComparison)) {
         Throw "workDir cannot be a sub directory of the searchDir"
     }
-
-    #Make sure paths are full paths
-    $config.searchDir = (Resolve-Path $config.searchDir).Path
-    $config.workDir = (Resolve-Path $config.workDir).Path
+    #Not an error, as existing setups may use this layout, but a package id that matches
+    #the searchDir folder name would have its work directory created inside the searchDir
+    if ($normalizedSearchDir.StartsWith($normalizedWorkDir + $separator, $pathComparison)) {
+        Write-Warning "searchDir is inside the workDir, keeping them in separate folders is recommended"
+    }
 
     if ($config.useDropPath -eq "yes") {
         if ($config.dropEmpty -eq "yes") {
@@ -248,6 +293,21 @@
         $copyInternal = $true
     }
 
+    if ($null -eq $config.privateRepoType) {
+        #Fallback as this variable was not there from beginning
+        $privateRepoType = "nexus"
+    } elseif ("nexus", "sleet", "" -notcontains $config.privateRepoType) {
+        Throw "bad privateRepoType value in config xml, must be nexus or sleet"
+    } elseif ($config.privateRepoType -eq "sleet") {
+        $privateRepoType = "sleet"
+    } else {
+        $privateRepoType = "nexus"
+    }
+
+    if ($privateRepoType -eq "sleet") {
+        #TODO - setup pushing, setup repomove variables
+    }
+
     if ($null -ne $config.locale) {
         $global:remixerLocale = $config.locale
     } else {
@@ -256,4 +316,7 @@
 
     $versioningDLLPath = [IO.Path]::Combine((Split-Path $PSScriptRoot), "private", "Chocolatey.NuGet.Versioning.3.4.2", "lib", "netstandard2.0", "Chocolatey.NuGet.Versioning.dll")
     Add-Type -Path $versioningDLLPath
+
+    #Sentinel for dot-sourcing callers to detect stale config, see Get-RemixerConfigFingerprint
+    $configLoadFingerprint = Get-RemixerConfigFingerprint -BoundParameters $upperFunctionBoundParameters
 }

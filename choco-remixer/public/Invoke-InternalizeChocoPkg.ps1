@@ -40,7 +40,7 @@ Function Invoke-InternalizeChocoPkg {
         Try {
             Invoke-RepoMove @invokeRepoMoveArgs
         } Catch {
-            Write-Error "Error details:`n$($PSItem.ToString())`n$($PSItem.InvocationInfo.Line)`n$($PSItem.ScriptStackTrace)"
+            Write-Warning "Invoke-RepoMove failed, continuing. Error details:`n$($PSItem.ToString())`n$($PSItem.InvocationInfo.Line)`n$($PSItem.ScriptStackTrace)"
         }
     }
 
@@ -57,7 +57,7 @@ Function Invoke-InternalizeChocoPkg {
         Try {
             Invoke-RepoCheck @invokeRepoCheckArgs
         } Catch {
-            Write-Error "Error details:`n$($PSItem.ToString())`n$($PSItem.InvocationInfo.Line)`n$($PSItem.ScriptStackTrace)"
+            Write-Warning "Invoke-RepoCheck failed, continuing. Error details:`n$($PSItem.ToString())`n$($PSItem.InvocationInfo.Line)`n$($PSItem.ScriptStackTrace)"
         }
     }
 
@@ -88,37 +88,39 @@ Function Invoke-InternalizeChocoPkg {
 
         Write-Verbose "Repacking $($nupkgArray.Count) Packages"
         [System.Collections.ArrayList]$nupkgResultArray = @()
+        [System.Collections.ArrayList]$failedPkgs = @()
         $nupkgArrayDedup = $nupkgArray | Sort-Object -Unique
         Write-Verbose "Deduplicated packages"
 
         #unique needed to workaround a bug if accessing searchDir from a samba share where things show up twice if there are directories with the same name but different case.
         foreach ($package in $nupkgArrayDedup) {
-            $parameters = $PSBoundParameters
+            #Copy, so this function's own $PSBoundParameters is not modified
+            $parameters = @{}
+            foreach ($key in $PSBoundParameters.Keys) {
+                $parameters[$key] = $PSBoundParameters[$key]
+            }
             Try {
-                if ($parameters['nupkgFile']) {
-                    $parameters.nupkgFile = $package.fullname
-                } else {
-                    $parameters.Add("nupkgFile", $package.fullname)
-                }
-                if ($parameters['internalizedXML']) {
-                    $parameters.internalizedXML = $internalizedXML
-                } else {
-                    $parameters.Add("internalizedXML", $internalizedXML)
-                }
+                $parameters['nupkgFile'] = $package.fullname
+                $parameters['internalizedXML'] = $internalizedXML
                 $pkgResult = Invoke-InternalizeDownloadedChocoPkg @parameters
                 if (![System.String]::IsNullOrWhiteSpace($pkgResult.id)) {
                     $null = $nupkgResultArray.Add($pkgResult)
                 }
             } Catch {
-                Write-Error "Error details:`n$($PSItem.ToString())`n$($PSItem.InvocationInfo.Line)`n$($PSItem.ScriptStackTrace)"
+                Write-Warning "Failed to internalize $($package.FullName), continuing with the next package. Error details:`n$($PSItem.ToString())`n$($PSItem.InvocationInfo.Line)`n$($PSItem.ScriptStackTrace)"
+                $null = $failedPkgs.Add($package.FullName)
             }
         }
 
         if ($writeVersion) {
-            Write-Output "`n"
+            Write-Information "`n" -InformationAction Continue
             Foreach ($result in $nupkgResultArray) {
                 Write-Output "$($result.ID) $($result.OldVersion) to $($result.Version)"
             }
+        }
+
+        if ($failedPkgs.Count -gt 0) {
+            Write-Warning "$($failedPkgs.Count) package(s) failed to internalize:`n$($failedPkgs -join "`n")"
         }
     }
 }

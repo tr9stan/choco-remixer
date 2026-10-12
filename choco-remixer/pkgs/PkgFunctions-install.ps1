@@ -85,14 +85,20 @@ Function Convert-anaconda3 ([PackageInternalizeInfo]$obj) {
     Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url64 -filename $filename64 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum64
 }
 Function Convert-miniconda3 ([PackageInternalizeInfo]$obj) {
-    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$url32 = ').tostring()
-    $url32 = ($fullurl32 -split "'" | Select-String -Pattern "https").ToString()
+    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$url32 = ')
+    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$url64 = ')
 
-    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$url64 = ').tostring()
-    $url64 = ($fullurl64 -split "'" | Select-String -Pattern "https").ToString()
+    if (!($fullurl64)) {
+        Throw "Could not find the x64 download url for miniconda3, the install script format may have changed"
+    }
+    $url64 = ($fullurl64.tostring() -split "'" | Select-String -Pattern "https").ToString()
 
-    $filename32 = ($url32 -split "/" | Select-Object -Last 1).tostring()
-    $filePath32 = '    -file (Join-Path $pkgToolsDir "' + $filename32 + '")'
+    #Anaconda dropped the x86 installer, so the x86 url is optional now
+    if ($fullurl32) {
+        $url32 = ($fullurl32.tostring() -split "'" | Select-String -Pattern "https").ToString()
+        $filename32 = ($url32 -split "/" | Select-Object -Last 1).tostring()
+        $filePath32 = '    -file (Join-Path $pkgToolsDir "' + $filename32 + '")'
+    }
 
     $filename64 = ($url64 -split "/" | Select-Object -Last 1).tostring()
     $filePath64 = '    -file64 (Join-Path $pkgToolsDir "' + $filename64 + '")'
@@ -101,14 +107,18 @@ Function Convert-miniconda3 ([PackageInternalizeInfo]$obj) {
     $obj.installScriptMod = $obj.installScriptMod -replace "Install-ChocolateyPackage" , "Install-ChocolateyInstallPackage"
     $obj.installScriptMod = $obj.installScriptMod -replace [regex]::Escape("-ValidExitCodes @(0)") , "-ValidExitCodes @(0) ``"
 
-    $obj.installScriptMod = $obj.InstallScriptMod + $filePath32 + "```n"
+    if ($fullurl32) {
+        $obj.installScriptMod = $obj.InstallScriptMod + $filePath32 + "```n"
+    }
     $obj.installScriptMod = $obj.InstallScriptMod + $filePath64 + "`n"
     $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $pkgToolsDir\*.exe'
 
-    $checksum32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$checksum32 = ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+    if ($fullurl32) {
+        $checksum32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$checksum32 = ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+        Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum32
+    }
     $checksum64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$checksum64 = ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
 
-    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url32 -filename $filename32 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum32
     Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url64 -filename $filename64 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum64
 }
 
@@ -374,8 +384,24 @@ Function Convert-thunderbird ([PackageInternalizeInfo]$obj) {
     $checksums = GetChecksums -language $locale -checksumFile $(Join-Path $obj.toolsDir "LanguageChecksums.csv")
 
 
-    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url ").tostring()
-    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$packageArgs.Url64 ').tostring()
+    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern "\s'x86'\s+=")
+    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern "\s'x64'\s+=")
+
+    if ($fullurl32 -and $fullurl64) {
+        $fullurl32 = $fullurl32.tostring()
+        $fullurl64 = $fullurl64.tostring()
+        $scriptHasArchBlock = $false
+    } else {
+        $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url ")
+        $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$packageArgs.Url64 ')
+        if ($fullurl32) { $fullurl32 = $fullurl32.tostring() } else { $fullurl32 = $null }
+        if ($fullurl64) { $fullurl64 = $fullurl64.tostring() } else { $fullurl64 = $null }
+        $scriptHasArchBlock = $true
+    }
+
+    if (!$fullurl32 -or !$fullurl64) {
+        Throw "Could not find the download urls for thunderbird, the install script format may have changed"
+    }
 
     $url32 = ($fullurl32 -split '"' | Select-String -Pattern "http").tostring() -replace '\$\{locale\}', $locale
     $url64 = ($fullurl64 -split '"' | Select-String -Pattern "http").tostring() -replace '\$\{locale\}', $locale
@@ -384,12 +410,19 @@ Function Convert-thunderbird ([PackageInternalizeInfo]$obj) {
     $filename64 = "Thunderbird_setup_x64.exe"
 
     $filePath32 = 'file     = (Join-Path $toolsDir "' + $filename32 + '")'
-    $filePath64 = '$packageArgs.file64  = (Join-Path $toolsDir "' + $filename64 + '")'
 
     $obj.installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $obj.InstallScriptMod
     $obj.installScriptMod = $obj.installScriptMod -replace "Install-ChocolateyPackage" , "Install-ChocolateyInstallPackage"
-    $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n"
-    $obj.installScriptMod = $obj.installScriptMod -replace "Get-OSArchitectureWidth 64\)\) {" , "$&`n   $filePath64`n"
+
+    if ($scriptHasArchBlock) {
+        $filePath64 = '$packageArgs.file64  = (Join-Path $toolsDir "' + $filename64 + '")'
+        $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n"
+        $obj.installScriptMod = $obj.installScriptMod -replace "Get-OSArchitectureWidth 64\)\) {" , "$&`n   $filePath64`n"
+    } else {
+        $filePath64 = 'file64   = (Join-Path $toolsDir "' + $filename64 + '")'
+        $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n    $filePath64`n"
+    }
+
     $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.exe'
 
 
@@ -408,8 +441,24 @@ Function Convert-firefox ([PackageInternalizeInfo]$obj) {
     $checksums = GetChecksums -language $locale -checksumFile $(Join-Path $obj.toolsDir "LanguageChecksums.csv")
 
 
-    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url ").tostring()
-    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$packageArgs.Url64 ').tostring()
+    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern "\s'x86'\s+=")
+    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern "\s'x64'\s+=")
+
+    if ($fullurl32 -and $fullurl64) {
+        $fullurl32 = $fullurl32.tostring()
+        $fullurl64 = $fullurl64.tostring()
+        $scriptHasArchBlock = $false
+    } else {
+        $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url ")
+        $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$packageArgs.Url64 ')
+        if ($fullurl32) { $fullurl32 = $fullurl32.tostring() } else { $fullurl32 = $null }
+        if ($fullurl64) { $fullurl64 = $fullurl64.tostring() } else { $fullurl64 = $null }
+        $scriptHasArchBlock = $true
+    }
+
+    if (!$fullurl32 -or !$fullurl64) {
+        Throw "Could not find the download urls for firefox, the install script format may have changed"
+    }
 
     $url32 = ($fullurl32 -split '"' | Select-String -Pattern "http").tostring() -replace '\$\{locale\}', $locale
     $url64 = ($fullurl64 -split '"' | Select-String -Pattern "http").tostring() -replace '\$\{locale\}', $locale
@@ -418,12 +467,19 @@ Function Convert-firefox ([PackageInternalizeInfo]$obj) {
     $filename64 = "Firefox_setup_x64.exe"
 
     $filePath32 = 'file     = (Join-Path $toolsDir "' + $filename32 + '")'
-    $filePath64 = '$packageArgs.file64  = (Join-Path $toolsDir "' + $filename64 + '")'
 
     $obj.installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $obj.InstallScriptMod
     $obj.installScriptMod = $obj.installScriptMod -replace "Install-ChocolateyPackage" , "Install-ChocolateyInstallPackage"
-    $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n"
-    $obj.installScriptMod = $obj.installScriptMod -replace "Get-OSArchitectureWidth 64\)\) {" , "$&`n   $filePath64`n"
+
+    if ($scriptHasArchBlock) {
+        $filePath64 = '$packageArgs.file64  = (Join-Path $toolsDir "' + $filename64 + '")'
+        $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n"
+        $obj.installScriptMod = $obj.installScriptMod -replace "Get-OSArchitectureWidth 64\)\) {" , "$&`n   $filePath64`n"
+    } else {
+        $filePath64 = 'file64   = (Join-Path $toolsDir "' + $filename64 + '")'
+        $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n    $filePath64`n"
+    }
+
     $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.exe'
 
 
@@ -441,8 +497,24 @@ Function Convert-firefoxesr ([PackageInternalizeInfo]$obj) {
     $checksums = GetChecksums -language $locale -checksumFile $(Join-Path $obj.toolsDir "LanguageChecksums.csv")
 
 
-    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url ").tostring()
-    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$packageArgs.Url64 ').tostring()
+    $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern "\s'x86'\s+=")
+    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern "\s'x64'\s+=")
+
+    if ($fullurl32 -and $fullurl64) {
+        $fullurl32 = $fullurl32.tostring()
+        $fullurl64 = $fullurl64.tostring()
+        $scriptHasArchBlock = $false
+    } else {
+        $fullurl32 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern " Url ")
+        $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '\$packageArgs.Url64 ')
+        if ($fullurl32) { $fullurl32 = $fullurl32.tostring() } else { $fullurl32 = $null }
+        if ($fullurl64) { $fullurl64 = $fullurl64.tostring() } else { $fullurl64 = $null }
+        $scriptHasArchBlock = $true
+    }
+
+    if (!$fullurl32 -or !$fullurl64) {
+        Throw "Could not find the download urls for firefoxesr, the install script format may have changed"
+    }
 
     $url32 = ($fullurl32 -split '"' | Select-String -Pattern "http").tostring() -replace '\$\{locale\}', $locale
     $url64 = ($fullurl64 -split '"' | Select-String -Pattern "http").tostring() -replace '\$\{locale\}', $locale
@@ -451,12 +523,19 @@ Function Convert-firefoxesr ([PackageInternalizeInfo]$obj) {
     $filename64 = "Firefox_esr_setup_x64.exe"
 
     $filePath32 = 'file     = (Join-Path $toolsDir "' + $filename32 + '")'
-    $filePath64 = '$packageArgs.file64  = (Join-Path $toolsDir "' + $filename64 + '")'
 
     $obj.installScriptMod = '$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"' + "`n" + $obj.InstallScriptMod
     $obj.installScriptMod = $obj.installScriptMod -replace "Install-ChocolateyPackage" , "Install-ChocolateyInstallPackage"
-    $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n"
-    $obj.installScriptMod = $obj.installScriptMod -replace "Get-OSArchitectureWidth 64\)\) {" , "$&`n   $filePath64`n"
+
+    if ($scriptHasArchBlock) {
+        $filePath64 = '$packageArgs.file64  = (Join-Path $toolsDir "' + $filename64 + '")'
+        $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n"
+        $obj.installScriptMod = $obj.installScriptMod -replace "Get-OSArchitectureWidth 64\)\) {" , "$&`n   $filePath64`n"
+    } else {
+        $filePath64 = 'file64   = (Join-Path $toolsDir "' + $filename64 + '")'
+        $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n    $filePath32`n    $filePath64`n"
+    }
+
     $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.exe'
 
 
@@ -743,7 +822,19 @@ Function Convert-tailscale ([PackageInternalizeInfo]$obj) {
         Write-Information "mockup"
     }
 
+    #The install script dereferences PROCESSOR_IDENTIFIER to pick its download,
+    #but that variable does not exist on Linux. Pretend to be AMD64 so the script
+    #fills in the x86/x64 package args that are pulled out below.
+    $savedProcessorIdentifier = $env:PROCESSOR_IDENTIFIER
+    if ($null -eq $savedProcessorIdentifier) {
+        $env:PROCESSOR_IDENTIFIER = 'AMD64 Family 6 Model 158 Stepping 9, AuthenticAMD'
+    }
+
     . $((Get-ChildItem $obj.toolsDir | Where-Object Name -ieq "ChocolateyInstall.ps1").Fullname)
+
+    if ($null -eq $savedProcessorIdentifier) {
+        Remove-Item -Path Env:\PROCESSOR_IDENTIFIER -Force -ErrorAction SilentlyContinue
+    }
 
     $url32 = $packageArgs.Url
     $url64 = $packageArgs.Url64Bit
@@ -1150,8 +1241,8 @@ Function Convert-xming ([PackageInternalizeInfo]$obj) {
 }
 
 Function Convert-conemu ([PackageInternalizeInfo]$obj) {
-    $installScriptExec = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '^\$(version|url) = ') -join "`n"
-    Invoke-Expression $installScriptExec
+    #Read the url from the install script without running it
+    $url = (Get-ScriptAssignedValue -Script ($obj.installScriptOrig -join "`n") -Name 'url').url
 
     $filename = ($url -split "/" | Select-Object -Last 1).tostring()
     $filePath32 = 'file          = (Join-Path $toolsDir "' + $filename + '")'
@@ -1453,4 +1544,19 @@ Function Convert-amd-driver ([PackageInternalizeInfo]$obj) {
 
     $checksum64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern 'checksum64 ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
     Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url64 -filename $filename64 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum64 -acceptMIME $accept -referer $referer
+}
+
+Function Convert-microsoft-openjdk ([PackageInternalizeInfo]$obj) {
+    $fullurl64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '^\$url = ').tostring()
+    $url64 = ($fullurl64 -split "'" | Select-String -Pattern "http").tostring()
+
+    $filename64 = ($url64 -split "/" | Select-Object -Last 1).tostring()
+    $filePath64 = 'file64      = (Join-Path $toolsDir "' + $filename64 + '")'
+
+    $obj.installScriptMod =$obj.installScriptMod -replace "Install-ChocolateyPackage" , "Install-ChocolateyInstallPackage"
+    $obj.installScriptMod = $obj.installScriptMod -replace "packageArgs = @{" , "$&`n  $filePath64"
+    $obj.installScriptMod = $obj.installScriptMod + "`n" + 'Remove-Item -Force -EA 0 -Path $toolsDir\*.msi'
+
+    $checksum64 = ($obj.installScriptOrig -split "`n" | Select-String -Pattern '^\$checksum = ').tostring() -split "'" | Select-Object -Last 1 -Skip 1
+    Get-FileWithCache -PackageID $obj.nuspecID -PackageVersion $obj.version -url $url64 -filename $filename64 -folder $obj.toolsDir -checksumTypeType 'sha256' -checksum $checksum64
 }
